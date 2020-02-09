@@ -97,7 +97,7 @@ void StartScene::handleEvents()
 void StartScene::start()
 {
 	SDL_Color blue = { 0, 0, 255, 255 };
-	m_pStartLabel = new Label("Mail Pilot", "Dock51", 80, blue, 
+	m_pStartLabel = new Label("USS Program", "Dock51", 80, blue, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.5f, 100.0f));
 	m_pStartLabel->setParent(this);
 	addChild(m_pStartLabel);
