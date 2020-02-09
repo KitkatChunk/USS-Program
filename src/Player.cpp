@@ -1,39 +1,37 @@
-#include "Plane.h"
+#include "Player.h"
 #include "Game.h"
 
-Plane::Plane() :m_maxSpeed(10.0f), m_isMoving(false)
+Player::Player() :m_maxSpeed(10.0f), m_isMoving(false)
 {
 	TheTextureManager::Instance()->load("../Assets/textures/spaceship.png",
-		"plane", TheGame::Instance()->getRenderer());
+		"player", TheGame::Instance()->getRenderer());
 
 	// measure size by querying the texture
-	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("plane");
+	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("player");
 	setWidth(size.x);
 	setHeight(size.y);
 
 	setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, 435.0f));
 	setIsColliding(false);
-	setType(GameObjectType::PLANE);
+	setType(GameObjectType::PLAYER);
 	setVelocity(glm::vec2(0.0f, 0.0f));
-	
 }
 
-Plane::~Plane()
+Player::~Player()
 {
 }
 
-void Plane::draw()
+void Player::draw()
 {
 	int xComponent = getPosition().x;
 	int yComponent = getPosition().y;
 
-	TheTextureManager::Instance()->draw("plane", xComponent, yComponent,
+	TheTextureManager::Instance()->draw("player", xComponent, yComponent,
 		TheGame::Instance()->getRenderer(), 0, 255, true);
 }
 
-void Plane::update()
+void Player::update()
 {
-	
 	auto currentPosition = getPosition();
 	auto currentVelocity = getVelocity();
 
@@ -48,11 +46,11 @@ void Plane::update()
 	m_checkBounds();
 }
 
-void Plane::clean()
+void Player::clean()
 {
 }
 
-void Plane::move(Move newMove)
+void Player::move(Move newMove)
 {
 	auto currentVelocity = getVelocity();
 	
@@ -67,17 +65,17 @@ void Plane::move(Move newMove)
 	}
 }
 
-bool Plane::getIsMoving()
+bool Player::getIsMoving()
 {
 	return m_isMoving;
 }
 
-void Plane::setIsMoving(bool newState)
+void Player::setIsMoving(bool newState)
 {
 	m_isMoving = newState;
 }
 
-void Plane::m_checkBounds()
+void Player::m_checkBounds()
 {
 	// check right bounds
 	if(getPosition().x >= Config::SCREEN_WIDTH - getWidth() * 0.5f)

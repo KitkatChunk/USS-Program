@@ -9,7 +9,6 @@ enum GameObjectType {
 	BULLET,
 	ENEMY,
 	OCEAN,
-	PLANE,
 	START_BUTTON,
 	NUM_OF_TYPES
 };

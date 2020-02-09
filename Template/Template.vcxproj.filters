@@ -99,10 +99,10 @@
     <ClCompile Include="..\src\Button.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Plane.cpp">
+    <ClCompile Include="..\src\Island.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Island.cpp">
+    <ClCompile Include="..\src\Player.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
   </ItemGroup>
@@ -191,13 +191,13 @@
     <ClInclude Include="..\src\Button.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Plane.h">
-      <Filter>Game Objects</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Move.h">
       <Filter>Enums</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Island.h">
+      <Filter>Game Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Player.h">
       <Filter>Game Objects</Filter>
     </ClInclude>
   </ItemGroup>

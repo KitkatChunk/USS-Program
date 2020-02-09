@@ -33,11 +33,9 @@ int main(int argc, char * args[])
 	Uint32 frameStart, frameTime;
 	UINT32 frames = 0;
 
-
 	// show console
 	AllocConsole();
 	freopen("CON", "w", stdout);
-
 
 	TheGame::Instance()->init("Mail Pilot", 100, 100, Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT, false);
 
@@ -60,10 +58,8 @@ int main(int argc, char * args[])
 
 		frames++;
 		TheGame::Instance()->setFrames(frames);
-
 	}
 
 	TheGame::Instance()->clean();
 	return 0;
 }
-

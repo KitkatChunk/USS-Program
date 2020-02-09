@@ -172,7 +172,7 @@
     <ClCompile Include="..\src\Label.cpp" />
     <ClCompile Include="..\src\Level1Scene.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Plane.cpp" />
+    <ClCompile Include="..\src\Player.cpp" />
     <ClCompile Include="..\src\PlayScene.cpp" />
     <ClCompile Include="..\src\Scene.cpp" />
     <ClCompile Include="..\src\SoundManager.cpp" />
@@ -202,7 +202,7 @@
     <ClInclude Include="..\src\Label.h" />
     <ClInclude Include="..\src\Level1Scene.h" />
     <ClInclude Include="..\src\Move.h" />
-    <ClInclude Include="..\src\Plane.h" />
+    <ClInclude Include="..\src\Player.h" />
     <ClInclude Include="..\src\PlayScene.h" />
     <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\SceneState.h" />

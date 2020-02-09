@@ -14,21 +14,20 @@ Level1Scene::~Level1Scene()
 void Level1Scene::draw()
 {
 	m_pIsland->draw();
-	
-	m_pPlane->draw();
+	m_pPlayer->draw();
 }
 
 void Level1Scene::update()
 {
-	m_pPlane->update();
+	m_pPlayer->update();
 	//m_pPlane->setVelocity(m_pPlane->getVelocity() * 0.97f);
+	
 	// plane moving with mouse motion
 	//m_pPlane->setPosition(glm::vec2(m_mousePosition.x, m_pPlane->getPosition().y));
 
 	//CollisionManager::AABBCheck(m_pPlane, m_pIsland);
 
-	CollisionManager::squaredRadiusCheck(m_pPlane, m_pIsland);
-
+	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pIsland);
 }
 
 void Level1Scene::clean()
@@ -56,7 +55,6 @@ void Level1Scene::handleEvents()
 			switch(event.button.button)
 			{
 			case SDL_BUTTON_LEFT:
-				
 				break;
 			}
 		
@@ -85,7 +83,6 @@ void Level1Scene::handleEvents()
 				TheGame::Instance()->changeSceneState(SceneState::END_SCENE);
 				break;
 			
-
 				/************************************************************************/
 			case SDLK_w:
 				
@@ -94,16 +91,16 @@ void Level1Scene::handleEvents()
 				
 				break;
 			case SDLK_a:
-				m_pPlane->move(LEFT);
+				m_pPlayer->move(LEFT);
 				break;
 			case SDLK_d:
-				m_pPlane->move(RIGHT);
+				m_pPlayer->move(RIGHT);
 				break;
 				case SDLK_LEFT:
-				m_pPlane->move(LEFT);
+				m_pPlayer->move(LEFT);
 				break;
 				case SDLK_RIGHT:
-				m_pPlane->move(RIGHT);
+				m_pPlayer->move(RIGHT);
 				break;
 			}
 			
@@ -120,16 +117,16 @@ void Level1Scene::handleEvents()
 				break;
 
 			case SDLK_a:
-				m_pPlane->setIsMoving(false);
+				m_pPlayer->setIsMoving(false);
 				break;
 			case SDLK_d:
-				m_pPlane->setIsMoving(false);
+				m_pPlayer->setIsMoving(false);
 				break;
 				case SDLK_LEFT:
-				m_pPlane->setIsMoving(false);
+				m_pPlayer->setIsMoving(false);
 				break;
 				case SDLK_RIGHT:
-				m_pPlane->setIsMoving(false);
+				m_pPlayer->setIsMoving(false);
 				break;
 			}
 			
@@ -142,8 +139,8 @@ void Level1Scene::handleEvents()
 
 void Level1Scene::start()
 {
-	m_pPlane = new Plane(); // instantiates Plane
-	addChild(m_pPlane);
+	m_pPlayer = new Player(); // instantiates Player
+	addChild(m_pPlayer);
 
 	m_pIsland = new Island(); // instantiates Island
 	addChild(m_pIsland);

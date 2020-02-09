@@ -3,7 +3,7 @@
 #define __LEVEL_1_SCENE__
 
 #include "Scene.h"
-#include "Plane.h"
+#include "Player.h"
 #include "Island.h"
 
 class Level1Scene : public Scene
@@ -23,14 +23,12 @@ public:
 
 private:
 	// game objects
-	Plane* m_pPlane;
+	Player* m_pPlayer;
 	Island* m_pIsland;
 
 
 	// private data member
 	glm::vec2 m_mousePosition;
-	
-	
 };
 
 #endif /* defined (__LEVEL_1_SCENE__) */

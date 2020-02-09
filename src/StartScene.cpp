@@ -18,7 +18,6 @@ void StartScene::draw()
 {
 	m_pStartLabel->draw();
 	m_pStartButton->draw();
-	
 }
 
 void StartScene::update()
@@ -30,7 +29,6 @@ void StartScene::update()
 void StartScene::clean()
 {
 	delete m_pStartLabel;
-	
 	removeAllChildren();
 }
 
@@ -70,7 +68,6 @@ void StartScene::handleEvents()
 		case SDL_MOUSEWHEEL:
 			wheel = event.wheel.y;
 			break;
-
 
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)
