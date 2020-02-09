@@ -99,6 +99,12 @@ void Level1Scene::handleEvents()
 			case SDLK_d:
 				m_pPlane->move(RIGHT);
 				break;
+				case SDLK_LEFT:
+				m_pPlane->move(LEFT);
+				break;
+				case SDLK_RIGHT:
+				m_pPlane->move(RIGHT);
+				break;
 			}
 			
 			break;
@@ -117,6 +123,12 @@ void Level1Scene::handleEvents()
 				m_pPlane->setIsMoving(false);
 				break;
 			case SDLK_d:
+				m_pPlane->setIsMoving(false);
+				break;
+				case SDLK_LEFT:
+				m_pPlane->setIsMoving(false);
+				break;
+				case SDLK_RIGHT:
 				m_pPlane->setIsMoving(false);
 				break;
 			}

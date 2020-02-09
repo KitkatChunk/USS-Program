@@ -72,10 +72,6 @@ void StartScene::handleEvents()
 			break;
 
 
-
-
-
-			
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)
 			{
