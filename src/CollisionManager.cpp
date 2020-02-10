@@ -29,7 +29,7 @@ bool CollisionManager::squaredRadiusCheck(GameObject* object1, GameObject* objec
 			switch (object2->getType()) {
 			case MINE:
 				std::cout << "Collision with MINE!" << std::endl;
-				TheSoundManager::Instance()->playSound("yay", 0);
+				TheSoundManager::Instance()->playSound("explosion", 0);
 				break;
 			case CLOUD:
 				std::cout << "Collision with CLOUD!" << std::endl;
@@ -75,7 +75,7 @@ bool CollisionManager::AABBCheck(GameObject* object1, GameObject* object2)
 			switch (object2->getType()) {
 			case MINE:
 				std::cout << "Collision with Mine!" << std::endl;
-				TheSoundManager::Instance()->playSound("yay", 0);
+				TheSoundManager::Instance()->playSound("explosion", 0);
 				break;
 			default:
 				//std::cout << "Collision with unknown type!" << std::endl;
@@ -222,7 +222,7 @@ bool CollisionManager::circleAABBCheck(GameObject* object1, GameObject* object2)
 			switch (object2->getType()) {
 			case MINE:
 				std::cout << "Collision with MINE!" << std::endl;
-				TheSoundManager::Instance()->playSound("yay", 0);
+				TheSoundManager::Instance()->playSound("explosion", 0);
 				break;
 			case CLOUD:
 				std::cout << "Collision with CLOUD!" << std::endl;
