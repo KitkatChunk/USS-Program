@@ -27,8 +27,8 @@ bool CollisionManager::squaredRadiusCheck(GameObject* object1, GameObject* objec
 			object2->setIsColliding(true);
 
 			switch (object2->getType()) {
-			case ISLAND:
-				std::cout << "Collision with ISLAND!" << std::endl;
+			case MINE:
+				std::cout << "Collision with MINE!" << std::endl;
 				TheSoundManager::Instance()->playSound("yay", 0);
 				break;
 			case CLOUD:
@@ -73,8 +73,8 @@ bool CollisionManager::AABBCheck(GameObject* object1, GameObject* object2)
 			object2->setIsColliding(true);
 
 			switch (object2->getType()) {
-			case ISLAND:
-				std::cout << "Collision with Island!" << std::endl;
+			case MINE:
+				std::cout << "Collision with Mine!" << std::endl;
 				TheSoundManager::Instance()->playSound("yay", 0);
 				break;
 			default:
@@ -220,8 +220,8 @@ bool CollisionManager::circleAABBCheck(GameObject* object1, GameObject* object2)
 			//std::cout << "Angle: " << angle << std::endl;
 
 			switch (object2->getType()) {
-			case ISLAND:
-				std::cout << "Collision with ISLAND!" << std::endl;
+			case MINE:
+				std::cout << "Collision with MINE!" << std::endl;
 				TheSoundManager::Instance()->playSound("yay", 0);
 				break;
 			case CLOUD:

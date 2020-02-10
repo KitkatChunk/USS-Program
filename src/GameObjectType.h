@@ -3,7 +3,7 @@
 #define __GAME_OBJECT_TYPE__
 enum GameObjectType {
 	NONE = -1,
-	ISLAND,
+	MINE,
 	PLAYER,
 	CLOUD,
 	BULLET,

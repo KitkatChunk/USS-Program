@@ -13,7 +13,7 @@ Level1Scene::~Level1Scene()
 
 void Level1Scene::draw()
 {
-	m_pIsland->draw();
+	m_pMine->draw();
 	m_pPlayer->draw();
 }
 
@@ -25,9 +25,9 @@ void Level1Scene::update()
 	// plane moving with mouse motion
 	//m_pPlane->setPosition(glm::vec2(m_mousePosition.x, m_pPlane->getPosition().y));
 
-	//CollisionManager::AABBCheck(m_pPlane, m_pIsland);
+	//CollisionManager::AABBCheck(m_pPlane, m_pMine);
 
-	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pIsland);
+	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pMine);
 }
 
 void Level1Scene::clean()
@@ -142,8 +142,8 @@ void Level1Scene::start()
 	m_pPlayer = new Player(); // instantiates Player
 	addChild(m_pPlayer);
 
-	m_pIsland = new Island(); // instantiates Island
-	addChild(m_pIsland);
+	m_pMine = new Mine(); // instantiates Island
+	addChild(m_pMine);
 }
 
 glm::vec2 Level1Scene::getMousePosition()

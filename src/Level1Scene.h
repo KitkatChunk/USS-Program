@@ -4,7 +4,7 @@
 
 #include "Scene.h"
 #include "Player.h"
-#include "Island.h"
+#include "Mine.h"
 
 class Level1Scene : public Scene
 {
@@ -24,7 +24,7 @@ public:
 private:
 	// game objects
 	Player* m_pPlayer;
-	Island* m_pIsland;
+	Mine* m_pMine;
 
 
 	// private data member

@@ -168,7 +168,7 @@
     <ClCompile Include="..\src\FontManager.cpp" />
     <ClCompile Include="..\src\Game.cpp" />
     <ClCompile Include="..\src\GameObject.cpp" />
-    <ClCompile Include="..\src\Island.cpp" />
+    <ClCompile Include="..\src\Mine.cpp" />
     <ClCompile Include="..\src\Label.cpp" />
     <ClCompile Include="..\src\Level1Scene.cpp" />
     <ClCompile Include="..\src\main.cpp" />
@@ -198,7 +198,7 @@
     <ClInclude Include="..\src\Game.h" />
     <ClInclude Include="..\src\GameObject.h" />
     <ClInclude Include="..\src\GameObjectType.h" />
-    <ClInclude Include="..\src\Island.h" />
+    <ClInclude Include="..\src\Mine.h" />
     <ClInclude Include="..\src\Label.h" />
     <ClInclude Include="..\src\Level1Scene.h" />
     <ClInclude Include="..\src\Move.h" />
