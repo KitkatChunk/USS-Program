@@ -22,7 +22,6 @@ public:
 
 private:
 	float m_maxSpeed;
-
 	bool m_isMoving;
 
 	void m_checkBounds();

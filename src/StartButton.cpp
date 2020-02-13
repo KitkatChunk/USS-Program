@@ -8,7 +8,6 @@ StartButton::StartButton()
 		"startButton",
 		START_BUTTON, glm::vec2(400.0f, 300.0f)), m_isClicked(false)
 {
-	
 }
 
 StartButton::~StartButton()
@@ -30,8 +29,5 @@ bool StartButton::ButtonClick()
 	{
 		m_isClicked = false;
 	}
-
 	return false;
 }
-
-

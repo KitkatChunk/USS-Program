@@ -1,6 +1,6 @@
 #include "DisplayObject.h"
 
-Scene * DisplayObject::getParent()
+Scene * DisplayObject::getParent() const
 {
 	return m_pParentScene;
 }

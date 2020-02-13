@@ -15,11 +15,13 @@ void Level1Scene::draw()
 {
 	m_pMine->draw();
 	m_pPlayer->draw();
+	m_pEnemy->draw();
 }
 
 void Level1Scene::update()
 {
 	m_pPlayer->update();
+	m_pEnemy->update();
 	//m_pPlane->setVelocity(m_pPlane->getVelocity() * 0.97f);
 	
 	// plane moving with mouse motion
@@ -83,7 +85,7 @@ void Level1Scene::handleEvents()
 				TheGame::Instance()->changeSceneState(SceneState::END_SCENE);
 				break;
 			
-				/************************************************************************/
+				//Movement Controls
 			case SDLK_w:
 				
 				break;
@@ -142,6 +144,9 @@ void Level1Scene::start()
 	m_pPlayer = new Player(); // instantiates Player
 	addChild(m_pPlayer);
 
+	m_pEnemy = new Enemy(); // instantiates Enemy
+	addChild(m_pEnemy);
+
 	m_pMine = new Mine(); // instantiates Island
 	addChild(m_pMine);
 }
@@ -150,4 +155,3 @@ glm::vec2 Level1Scene::getMousePosition()
 {
 	return m_mousePosition;
 }
-

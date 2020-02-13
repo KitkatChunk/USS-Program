@@ -26,6 +26,7 @@ bool SoundManager::load(std::string fileName, std::string id, sound_type type)
 		m_music[id] = pMusic;
 		return true;
 	}
+	
 	else if (type == SOUND_SFX)
 	{
 		Mix_Chunk* pChunk = Mix_LoadWAV(fileName.c_str());

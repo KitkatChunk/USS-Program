@@ -468,7 +468,6 @@ namespace
 	void DrawRectangle(const Rect& bounding, SDL_Texture* texture, int textureWidth, int textureHeight, const Color& color, bool doHorizontalFlip, bool doVerticalFlip)
 	{
 		// We are safe to assume uniform color here, because the caller checks it and and uses the triangle renderer to render those.
-
 		const SDL_Rect destination = {
 			static_cast<int>(bounding.MinX),
 			static_cast<int>(bounding.MinY),
@@ -485,7 +484,6 @@ namespace
 		else
 		{
 			// We can now just calculate the correct source rectangle and draw it.
-
 			const SDL_Rect source = {
 				static_cast<int>(bounding.MinU * textureWidth),
 				static_cast<int>(bounding.MinV * textureHeight),

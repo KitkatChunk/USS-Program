@@ -4,23 +4,19 @@
 #include <algorithm>
 #include <iomanip>
 
-
 Game* Game::s_pInstance = 0;
 
-// Game functions - DO NOT REMOVE ***********************************************
+// GAME FUNCTIONS - DO NOT REMOVE
 
 Game::Game() :
 	m_pWindow(NULL), m_pRenderer(NULL), m_currentFrame(0), m_currentScene(NULL), m_bRunning(true), m_currentSceneState(SceneState::NO_SCENE), m_frames(0)
 {
 	srand((unsigned)time(NULL));  // random seed
-
-	
 }
 
 Game::~Game()
 {
 }
-
 
 bool Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -45,7 +41,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			std::cout << "window creation success" << std::endl;
 			m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-
 			if (m_pRenderer != nullptr) // render init success
 			{
 				std::cout << "renderer creation success" << std::endl;
@@ -68,11 +63,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 				return false;
 			}
 
-			
-
 			//TheTextureManager::Instance()->load("../../Assets/textures/animate-alpha.png", "animate", m_pRenderer);
 			start();
-
 		}
 		else 
 		{
@@ -121,10 +113,10 @@ Uint32 Game::getFrames()
 
 void Game::changeSceneState(SceneState newState)
 {
-	if (newState != m_currentSceneState) {
-
+	if (newState != m_currentSceneState)
+	{
 		// if this is not the first time we're rendering a new scene
-		if (m_currentSceneState != SceneState::NO_SCENE) 
+		if (m_currentSceneState != SceneState::NO_SCENE)
 		{
 			m_currentScene->clean();
 			std::cout << "cleaning previous scene" << std::endl;
@@ -135,7 +127,7 @@ void Game::changeSceneState(SceneState newState)
 		}
 
 		m_currentSceneState = newState;
-		
+
 		switch (m_currentSceneState)
 		{
 		case SceneState::START_SCENE:
@@ -155,7 +147,6 @@ void Game::changeSceneState(SceneState newState)
 			break;
 		}
 	}
-	
 }
 
 void Game::quit()
@@ -190,8 +181,6 @@ void Game::clean()
 	TTF_Quit();
 
 	SDL_Quit();
-
-	
 }
 
 void Game::handleEvents()
@@ -207,11 +196,11 @@ void Game::handleEvents()
 			m_bRunning = false;
 			break;
 		case SDL_KEYDOWN:
-			switch (event.key.keysym.sym) 
+			switch (event.key.keysym.sym)
 			{
-				case SDLK_ESCAPE:
-					m_bRunning = false;
-					break;
+			case SDLK_ESCAPE:
+				m_bRunning = false;
+				break;
 			}
 			break;
 		default:

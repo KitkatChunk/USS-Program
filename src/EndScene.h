@@ -21,5 +21,4 @@ public:
 private:
 	Label* m_Label;
 };
-
 #endif /* defined (__END_SCENE__) */

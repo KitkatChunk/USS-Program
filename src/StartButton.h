@@ -10,10 +10,8 @@ public:
 	StartButton();
 	~StartButton();
 
-
 	bool ButtonClick() override;
 private:
 	bool m_isClicked;
 };
-
 #endif /* defined (__START_BUTTON__) */

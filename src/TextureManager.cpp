@@ -22,7 +22,6 @@ bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer * p
 	{
 		return true;
 	}
-	
 	SDL_Surface* pTempSurface = IMG_Load(fileName.c_str());
 
 	if (pTempSurface == 0)
@@ -40,7 +39,6 @@ bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer * p
 		return true;
 	}
 	// reaching here means something went wrong
-
 	return false;
 }
 
@@ -72,17 +70,18 @@ void TextureManager::draw(std::string id, int x, int y, SDL_Renderer * pRenderer
 	srcRect.w = destRect.w = textureWidth;
 	srcRect.h = destRect.h = textureHeight;
 
-	if (centered) {
+	if (centered)
+	{
 		int xOffset = textureWidth * 0.5;
 		int yOffset = textureHeight * 0.5;
 		destRect.x = x - xOffset;
 		destRect.y = y - yOffset;
 	}
-	else {
+	else
+	{
 		destRect.x = x;
 		destRect.y = y;
 	}
-
 	SDL_RenderCopyEx(pRenderer, m_textureMap[id], &srcRect, &destRect, 0, 0, flip);
 }
 
@@ -116,13 +115,15 @@ void TextureManager::draw(std::string id, int x, int y, SDL_Renderer * pRenderer
 	srcRect.w = destRect.w = textureWidth;
 	srcRect.h = destRect.h = textureHeight;
 
-	if (centered) {
+	if (centered)
+	{
 		int xOffset = textureWidth * 0.5;
 		int yOffset = textureHeight * 0.5;
 		destRect.x = x - xOffset;
 		destRect.y = y - yOffset;
 	}
-	else {
+	else
+	{
 		destRect.x = x;
 		destRect.y = y;
 	}
@@ -159,17 +160,18 @@ void TextureManager::drawFrame(std::string id, int x, int y, int currentRow, int
 	srcRect.w = destRect.w = textureWidth;
 	srcRect.h = destRect.h = textureHeight;
 
-	if (centered) {
+	if (centered)
+	{
 		int xOffset = textureWidth * 0.5;
 		int yOffset = textureHeight * 0.5;
 		destRect.x = x - xOffset;
 		destRect.y = y - yOffset;
 	}
-	else {
+	else
+	{
 		destRect.x = x;
 		destRect.y = y;
 	}
-
 	SDL_RenderCopyEx(pRenderer, m_textureMap[id], &srcRect, &destRect, 0, 0, flip);
 }
 
@@ -203,13 +205,15 @@ void TextureManager::drawFrame(std::string id, int x, int y, int currentRow, int
 	srcRect.w = destRect.w = textureWidth;
 	srcRect.h = destRect.h = textureHeight;
 
-	if (centered) {
+	if (centered)
+	{
 		int xOffset = textureWidth * 0.5;
 		int yOffset = textureHeight * 0.5;
 		destRect.x = x - xOffset;
 		destRect.y = y - yOffset;
 	}
-	else {
+	else
+	{
 		destRect.x = x;
 		destRect.y = y;
 	}
@@ -233,13 +237,15 @@ void TextureManager::drawText(std::string id, int x, int y, SDL_Renderer * pRend
 	srcRect.w = destRect.w = textureWidth;
 	srcRect.h = destRect.h = textureHeight;
 
-	if (centered) {
+	if (centered)
+	{
 		int xOffset = textureWidth * 0.5;
 		int yOffset = textureHeight * 0.5;
 		destRect.x = x - xOffset;
 		destRect.y = y - yOffset;
 	}
-	else {
+	else
+	{
 		destRect.x = x;
 		destRect.y = y;
 	}
@@ -304,7 +310,6 @@ void TextureManager::clean()
 	it = m_textureMap.begin();
 	while (it != m_textureMap.end())
 	{
-		
 		SDL_DestroyTexture(it->second);
 		it->second = NULL;
 		m_textureMap.erase(it++);
@@ -312,4 +317,3 @@ void TextureManager::clean()
 	m_textureMap.clear();
 	std::cout << "TextureMap Cleared,  TextureMap Size: " << m_textureMap.size() << std::endl;
 }
-

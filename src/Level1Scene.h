@@ -5,6 +5,7 @@
 #include "Scene.h"
 #include "Player.h"
 #include "Mine.h"
+#include "Enemy.h"
 
 class Level1Scene : public Scene
 {
@@ -24,11 +25,10 @@ public:
 private:
 	// game objects
 	Player* m_pPlayer;
+	Enemy* m_pEnemy;
 	Mine* m_pMine;
-
 
 	// private data member
 	glm::vec2 m_mousePosition;
 };
-
 #endif /* defined (__LEVEL_1_SCENE__) */

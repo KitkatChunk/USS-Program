@@ -31,7 +31,5 @@ private:
 
 	// private data member
 	glm::vec2 m_mousePosition;
-	
 };
-
 #endif /* defined (__START_SCENE__) */

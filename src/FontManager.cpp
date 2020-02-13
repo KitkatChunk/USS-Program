@@ -3,7 +3,6 @@
 
 FontManager* FontManager::s_pInstance = 0;
 
-
 bool FontManager::load(std::string fileName, std::string id, int size, int style)
 {
 	TTF_Font* font = TTF_OpenFont(fileName.c_str(), size);
@@ -13,7 +12,6 @@ bool FontManager::load(std::string fileName, std::string id, int size, int style
 		m_fontMap[id] = font;
 		return true;
 	}
-
 	return false;
 }
 
@@ -27,6 +25,7 @@ bool FontManager::textToTexture(std::string text, std::string fontID, std::strin
 		printf("Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError());
 		return false;
 	}
+	
 	else
 	{
 		//Create texture from surface pixels
@@ -37,7 +36,6 @@ bool FontManager::textToTexture(std::string text, std::string fontID, std::strin
 			printf("Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError());
 			return false;
 		}
-
 		//Get rid of old surface
 		SDL_FreeSurface(textSurface);
 	}
@@ -64,10 +62,8 @@ void FontManager::clean()
 		it->second = NULL;
 		m_fontMap.erase(it++);
 	}
-
 	m_fontMap.clear();
 }
-
 
 FontManager::FontManager()
 {

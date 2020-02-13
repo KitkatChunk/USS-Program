@@ -7,7 +7,6 @@
 #include <string>
 
 #include "GameObject.h"
-
 #include "SceneState.h"
 
 class Scene : public GameObject

@@ -43,8 +43,5 @@ private:
 	std::unordered_map<std::string, TTF_Font*> m_fontMap;
 
 	static FontManager* s_pInstance;
-
 };
-
-
 #endif /* defined(__FontManager__) */

@@ -16,7 +16,7 @@ void Scene::addChild(DisplayObject * child)
 
 void Scene::removeAllChildren()
 {
-	for(auto child : m_displayList)
+	for (auto child : m_displayList)
 	{
 		child = NULL;
 	}

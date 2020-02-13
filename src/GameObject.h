@@ -6,7 +6,6 @@
 #include <string>
 
 #include "GameObjectType.h"
-
 #include "SteeringState.h"
 
 class GameObject {
@@ -70,5 +69,4 @@ private:
 	GameObjectType m_type;
 	SteeringState m_state;
 };
-
 #endif

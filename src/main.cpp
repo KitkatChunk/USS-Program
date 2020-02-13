@@ -1,11 +1,11 @@
 // Core Libraries
-#include <stdlib.h>
+#include <cstdlib>
 #include <crtdbg.h>
 
 #include <iostream>
 #include <string>
 
-#include <math.h>
+#include <cmath>
 #include <Windows.h>
 
 //#include <map> // for std::map

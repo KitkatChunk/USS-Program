@@ -23,10 +23,8 @@ public:
 			s_pInstance = new TextureManager();
 			return s_pInstance;
 		}
-
 		return s_pInstance;
 	}
-	
 
 	bool load(std::string fileName, std::string id, SDL_Renderer* pRenderer);
 
@@ -57,7 +55,6 @@ public:
 	void clean();
 
 private:
-
 	TextureManager();
 	~TextureManager();
 
@@ -67,7 +64,6 @@ private:
 
 	bool m_textureExists(std::string id);
 };
-
 typedef TextureManager TheTextureManager;
 
 #endif /* defined(__TextureManager__) */

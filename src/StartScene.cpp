@@ -43,6 +43,7 @@ void StartScene::handleEvents()
 		case SDL_QUIT:
 			TheGame::Instance()->quit();
 			break;
+			
 		case SDL_MOUSEMOTION:
 			m_mousePosition.x = event.motion.x;
 			m_mousePosition.y = event.motion.y;
@@ -55,8 +56,8 @@ void StartScene::handleEvents()
 				m_pStartButton->setMouseButtonClicked(true);
 				break;
 			}
-
 			break;
+			
 		case SDL_MOUSEBUTTONUP:
 			switch (event.button.button)
 			{
@@ -65,6 +66,7 @@ void StartScene::handleEvents()
 				break;
 			}
 			break;
+			
 		case SDL_MOUSEWHEEL:
 			wheel = event.wheel.y;
 			break;
@@ -93,8 +95,8 @@ void StartScene::handleEvents()
 // this function is used for initialization
 void StartScene::start()
 {
-	SDL_Color blue = { 0, 0, 255, 255 };
-	m_pStartLabel = new Label("USS Program", "Dock51", 80, blue, 
+	SDL_Color red = { 255, 0, 0, 255 };
+	m_pStartLabel = new Label("USS Program", "Dock51", 80, red, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.5f, 100.0f));
 	m_pStartLabel->setParent(this);
 	addChild(m_pStartLabel);

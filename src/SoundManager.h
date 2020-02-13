@@ -41,7 +41,6 @@ private:
 
 	SoundManager(const SoundManager&);
 };
-
 typedef SoundManager TheSoundManager;
 
 #endif /* defined (__SoundManager__) */

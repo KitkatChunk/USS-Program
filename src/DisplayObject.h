@@ -18,11 +18,10 @@ public:
 
 	virtual void clean() override = 0;
 
-	Scene* getParent();
+	Scene* getParent() const;
 	void setParent(Scene* parent);
 
 private:
 	Scene* m_pParentScene;
 };
-
 #endif /* defined (__DISPLAY_OBJECT__) */

@@ -29,8 +29,6 @@
 class Game
 {
 public:
-	
-
 	static Game* Instance()
 	{
 		if (s_pInstance == nullptr)
@@ -38,7 +36,6 @@ public:
 			s_pInstance = new Game();
 			return s_pInstance;
 		}
-
 		return s_pInstance;
 	}
 
@@ -89,8 +86,6 @@ private:
 	Scene* m_currentScene;
 	SceneState m_currentSceneState;
 };
-
 typedef Game TheGame;
 
 #endif /* defined (__Game__) */
-

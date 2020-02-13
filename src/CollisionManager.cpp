@@ -2,8 +2,6 @@
 #include "Util.h"
 #include <algorithm>
 
-
-
 int CollisionManager::squaredDistance(glm::vec2 P1, glm::vec2 P2)
 {
 	int diffOfXs = P2.x - P1.x;
@@ -21,12 +19,14 @@ bool CollisionManager::squaredRadiusCheck(GameObject* object1, GameObject* objec
 
 	//if (glm::distance(P1, P2) < halfHeights) {
 
-	if (CollisionManager::squaredDistance(P1, P2) < (halfHeights * halfHeights)) {
-		if (!object2->getIsColliding()) {
-
+	if (CollisionManager::squaredDistance(P1, P2) < (halfHeights * halfHeights))
+	{
+		if (!object2->getIsColliding())
+		{
 			object2->setIsColliding(true);
 
-			switch (object2->getType()) {
+			switch (object2->getType())
+			{
 			case MINE:
 				std::cout << "Collision with MINE!" << std::endl;
 				TheSoundManager::Instance()->playSound("explosion", 0);
@@ -39,7 +39,6 @@ bool CollisionManager::squaredRadiusCheck(GameObject* object1, GameObject* objec
 				//std::cout << "Collision with unknown type!" << std::endl;
 				break;
 			}
-
 			return true;
 		}
 		return false;
@@ -63,25 +62,27 @@ bool CollisionManager::AABBCheck(GameObject* object1, GameObject* object2)
 
 	if (
 		P1.x < P2.x + P2width &&
-		P1.x + P1width > P2.x&&
+		P1.x + P1width > P2.x &&
 		P1.y < P2.y + P2height &&
 		P1.y + P1height > P2.y
-		)
+	)
 	{
-		if (!object2->getIsColliding()) {
-
+		if (!object2->getIsColliding())
+		{
 			object2->setIsColliding(true);
 
-			switch (object2->getType()) {
+			switch (object2->getType())
+			{
 			case MINE:
 				std::cout << "Collision with Mine!" << std::endl;
 				TheSoundManager::Instance()->playSound("explosion", 0);
+				break;
+			case ENEMY:
 				break;
 			default:
 				//std::cout << "Collision with unknown type!" << std::endl;
 				break;
 			}
-
 			return true;
 		}
 		return false;
@@ -91,7 +92,6 @@ bool CollisionManager::AABBCheck(GameObject* object1, GameObject* object2)
 		object2->setIsColliding(false);
 		return false;
 	}
-
 	return false;
 }
 
@@ -115,7 +115,6 @@ bool CollisionManager::lineLineCheck(glm::vec2 line1Start, glm::vec2 line1End, g
 	{
 		return true;
 	}
-
 	return false;
 }
 
@@ -144,7 +143,6 @@ bool CollisionManager::lineRectCheck(glm::vec2 line1Start, glm::vec2 line1End, g
 	if (left || right || top || bottom) {
 		return true;
 	}
-
 	return false;
 }
 
@@ -210,7 +208,6 @@ bool CollisionManager::circleAABBCheck(GameObject* object1, GameObject* object2)
 			glm::vec2 attackVector = object1->getPosition() - object2->getPosition();
 			glm::vec2  normal = glm::vec2(0.0f, -1.0f);
 
-
 			/*std::cout << "=====================================" << std::endl;
 			std::cout << "AttackX: " << attackVector.x << std::endl;
 			std::cout << "AttackY: " << attackVector.y << std::endl;*/
@@ -254,13 +251,11 @@ bool CollisionManager::circleAABBCheck(GameObject* object1, GameObject* object2)
 						object1->setVelocity(glm::vec2(object1->getVelocity().x, -object1->getVelocity().y));
 					}
 				}
-
 				break;
 			default:
 				//std::cout << "Collision with unknown type!" << std::endl;
 				break;
 			}
-
 			return true;
 		}
 		return false;
@@ -270,10 +265,8 @@ bool CollisionManager::circleAABBCheck(GameObject* object1, GameObject* object2)
 		object2->setIsColliding(false);
 		return false;
 	}
-
 	return false;
 }
-
 
 CollisionManager::CollisionManager()
 {
