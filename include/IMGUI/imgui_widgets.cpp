@@ -2,7 +2,6 @@
 // (widgets code)
 
 /*
-
 Index of this file:
 
 // [SECTION] Forward Declarations
@@ -24,7 +23,6 @@ Index of this file:
 // [SECTION] Widgets: MenuItem, BeginMenu, EndMenu, etc.
 // [SECTION] Widgets: BeginTabBar, EndTabBar, etc.
 // [SECTION] Widgets: BeginTabItem, EndTabItem, etc.
-
 */
 
 #if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)

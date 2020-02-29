@@ -6,10 +6,11 @@
 #include "Player.h"
 #include "Mine.h"
 #include "Enemy.h"
+#include "Background.h"
 
 class Level1Scene : public Scene
 {
-public:
+	public:
 	Level1Scene();
 	~Level1Scene();
 	
@@ -22,8 +23,9 @@ public:
 	// getters
 	glm::vec2 getMousePosition();
 
-private:
+	private:
 	// game objects
+	Background* m_pBackground;
 	Player* m_pPlayer;
 	Enemy* m_pEnemy;
 	Mine* m_pMine;

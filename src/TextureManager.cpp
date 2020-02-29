@@ -24,7 +24,7 @@ bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer * p
 	}
 	SDL_Surface* pTempSurface = IMG_Load(fileName.c_str());
 
-	if (pTempSurface == 0)
+	if (pTempSurface == nullptr)
 	{
 		return false;
 	}
@@ -33,7 +33,7 @@ bool TextureManager::load(std::string fileName, std::string id, SDL_Renderer * p
 	SDL_FreeSurface(pTempSurface);
 
 	// everything went ok, add the texture to our list
-	if (pTexture != 0)
+	if (pTexture != nullptr)
 	{
 		m_textureMap[id] = pTexture;
 		return true;

@@ -121,9 +121,7 @@ struct stbrp_rect
    // output:
    stbrp_coord    x, y;
    int            was_packed;  // non-zero if valid packing
-
 }; // 16 bytes, nominally
-
 
 STBRP_DEF void stbrp_init_target (stbrp_context *context, int width, int height, stbrp_node *nodes, int num_nodes);
 // Initialize a rectangle packer to:

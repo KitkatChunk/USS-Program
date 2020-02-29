@@ -18,8 +18,8 @@ bool FontManager::load(std::string fileName, std::string id, int size, int style
 bool FontManager::textToTexture(std::string text, std::string fontID, std::string textureID, SDL_Color colour)
 {
 	//Render text surface
-
 	SDL_Surface* textSurface = TTF_RenderText_Solid(m_fontMap[fontID] , text.c_str(), colour);
+	
 	if (textSurface == NULL)
 	{
 		printf("Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError());

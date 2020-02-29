@@ -11,7 +11,7 @@
 
 class Scene : public GameObject
 {
-public:
+	public:
 	friend class DisplayObject;
 	Scene();
 	virtual ~Scene();
@@ -27,8 +27,7 @@ public:
 	void removeAllChildren();
 	int numberOfChildren();
 
-private:
+	private:
 	std::vector<DisplayObject*> m_displayList;
 };
-
 #endif /* defined (__SCENE__) */

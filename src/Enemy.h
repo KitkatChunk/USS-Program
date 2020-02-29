@@ -6,7 +6,7 @@
 
 class Enemy : public DisplayObject
 {
-public:
+	public:
 	Enemy();
 	~Enemy();
 	
@@ -15,7 +15,7 @@ public:
 	void update() override;
 	void clean() override;
 
-private:
+	private:
 	void _move();
 	void _checkBounds();
 };

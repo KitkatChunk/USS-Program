@@ -8,7 +8,8 @@
 #include "GameObjectType.h"
 #include "SteeringState.h"
 
-class GameObject {
+class GameObject
+{
 public:
 	GameObject();
 	virtual ~GameObject();

@@ -7,7 +7,7 @@
 
 class DisplayObject : public GameObject
 {
-public:
+	public:
 	DisplayObject() {}
 	virtual ~DisplayObject() {}
 
@@ -21,7 +21,7 @@ public:
 	Scene* getParent() const;
 	void setParent(Scene* parent);
 
-private:
+	private:
 	Scene* m_pParentScene;
 };
 #endif /* defined (__DISPLAY_OBJECT__) */

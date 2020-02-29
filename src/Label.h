@@ -10,7 +10,7 @@
 
 class Label : public DisplayObject
 {
-public:
+	public:
 	Label(std::string text = "Default Label Text", std::string fontName = "lazy", int size = 20, SDL_Color colour = {0, 0, 0, 255}, glm::vec2 position = glm::vec2(), int fontStyle = TTF_STYLE_NORMAL, bool isCentered = true);
 	~Label();
 
@@ -23,7 +23,7 @@ public:
 	void setColour(SDL_Color newColour);
 	void setSize(int newSize);
 
-private:
+	private:
 	std::string m_fontPath;
 	std::string m_fontID;
 	SDL_Color m_fontColour;
@@ -35,5 +35,4 @@ private:
 
 	void m_buildFontID();
 };
-
 #endif /* defined (__Label__) */

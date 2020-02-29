@@ -1,7 +1,6 @@
 #include "Label.h"
 #include "Game.h"
 
-
 Label::Label(std::string text, std::string fontName, int fontSize, SDL_Color colour, glm::vec2 position, int fontStyle, bool isCentered):
 	m_fontName(fontName), m_fontColour(colour), m_text(text), m_isCentered(isCentered), m_fontSize(fontSize), m_fontStyle(fontStyle)
 {
@@ -20,7 +19,6 @@ Label::Label(std::string text, std::string fontName, int fontSize, SDL_Color col
 
 Label::~Label()
 {
-
 }
 
 void Label::draw()

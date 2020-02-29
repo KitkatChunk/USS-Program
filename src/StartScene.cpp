@@ -36,6 +36,7 @@ void StartScene::handleEvents()
 {
 	int wheel = 0;
 	SDL_Event event;
+	
 	while (SDL_PollEvent(&event))
 	{
 		switch (event.type)

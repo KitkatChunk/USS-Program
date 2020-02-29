@@ -7,7 +7,6 @@
 // Get latest version at https://github.com/ocornut/imgui
 
 /*
-
 Index of this file:
 // Header mess
 // Forward declarations and basic types
@@ -22,7 +21,6 @@ Index of this file:
 // Helpers (ImGuiOnceUponAFrame, ImGuiTextFilter, ImGuiTextBuffer, ImGuiStorage, ImGuiListClipper, ImColor)
 // Draw List API (ImDrawCallback, ImDrawCmd, ImDrawIdx, ImDrawVert, ImDrawChannel, ImDrawListSplitter, ImDrawListFlags, ImDrawList, ImDrawData)
 // Font API (ImFontConfig, ImFontGlyph, ImFontGlyphRangesBuilder, ImFontAtlasFlags, ImFontAtlas, ImFont)
-
 */
 
 #pragma once

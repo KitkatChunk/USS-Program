@@ -59,6 +59,7 @@ void Player::move(Move newMove)
 	case RIGHT:
 		setVelocity(glm::vec2(1.0f * m_maxSpeed, 0.0f));
 		break;
+		
 	case LEFT:
 		setVelocity(glm::vec2(-1.0f * m_maxSpeed, 0.0f));
 		break;

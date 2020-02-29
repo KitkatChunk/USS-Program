@@ -10,5 +10,4 @@ enum Move
 	DOWN,
 	NUM_OF_MOVES
 };
-
 #endif /* defined (__MOVE__)*/

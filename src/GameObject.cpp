@@ -10,7 +10,6 @@ GameObject::~GameObject()
 {
 }
 
-
 glm::vec2 GameObject::getPosition()
 {
 	return m_position;

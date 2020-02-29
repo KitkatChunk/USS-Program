@@ -6,7 +6,7 @@ StartButton::StartButton()
 	:Button(
 		"../Assets/textures/StartButton.png",
 		"startButton",
-		START_BUTTON, glm::vec2(400.0f, 300.0f)), m_isClicked(false)
+		START_BUTTON, glm::vec2(200.0f, 300.0f)), m_isClicked(false)
 {
 }
 

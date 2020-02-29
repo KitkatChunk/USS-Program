@@ -1,6 +1,6 @@
 #include "Game.h"
 #include <ctime>
-#include "GLM/gtx/string_cast.hpp"
+#include "glm/gtx/string_cast.hpp"
 #include <algorithm>
 #include <iomanip>
 

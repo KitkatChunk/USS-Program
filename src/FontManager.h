@@ -19,7 +19,7 @@
 
 class FontManager 
 {
-public:
+	public:
 	static FontManager* Instance()
 	{
 		if (s_pInstance == 0)
@@ -27,7 +27,6 @@ public:
 			s_pInstance = new FontManager();
 			return s_pInstance;
 		}
-
 		return s_pInstance;
 	}
 
@@ -36,7 +35,7 @@ public:
 	TTF_Font* getFont(std::string id);
 	void clean();
 
-private:
+	private:
 	FontManager();
 	~FontManager();
 

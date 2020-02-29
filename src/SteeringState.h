@@ -11,5 +11,4 @@ enum SteeringState {
 	FLEE,
 	NUM_OF_STATES
 };
-
 #endif /* defined (__STEERING_STATE__)*/

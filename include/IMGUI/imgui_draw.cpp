@@ -2,7 +2,6 @@
 // (drawing and font code)
 
 /*
-
 Index of this file:
 
 // [SECTION] STB libraries implementation
@@ -19,7 +18,6 @@ Index of this file:
 // [SECTION] Internal Render Helpers
 // [SECTION] Decompression code
 // [SECTION] Default font data (ProggyClean.ttf)
-
 */
 
 #if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)

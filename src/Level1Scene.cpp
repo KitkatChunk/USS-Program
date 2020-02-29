@@ -13,6 +13,7 @@ Level1Scene::~Level1Scene()
 
 void Level1Scene::draw()
 {
+	m_pBackground->draw();
 	m_pMine->draw();
 	m_pPlayer->draw();
 	m_pEnemy->draw();
@@ -22,6 +23,7 @@ void Level1Scene::update()
 {
 	m_pPlayer->update();
 	m_pEnemy->update();
+	m_pBackground->update();
 	//m_pPlane->setVelocity(m_pPlane->getVelocity() * 0.97f);
 	
 	// plane moving with mouse motion
@@ -72,6 +74,7 @@ void Level1Scene::handleEvents()
 		case SDL_MOUSEWHEEL:
 			wheel = event.wheel.y;
 			break;
+			
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)
 			{
@@ -131,8 +134,8 @@ void Level1Scene::handleEvents()
 				m_pPlayer->setIsMoving(false);
 				break;
 			}
-			
 			break;
+			
 		default:
 			break;
 		}
@@ -149,6 +152,9 @@ void Level1Scene::start()
 
 	m_pMine = new Mine(); // instantiates Island
 	addChild(m_pMine);
+
+	m_pBackground = new Background();
+	addChild(m_pBackground);
 }
 
 glm::vec2 Level1Scene::getMousePosition()

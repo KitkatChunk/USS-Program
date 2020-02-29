@@ -252,6 +252,7 @@ bool CollisionManager::circleAABBCheck(GameObject* object1, GameObject* object2)
 					}
 				}
 				break;
+				
 			default:
 				//std::cout << "Collision with unknown type!" << std::endl;
 				break;

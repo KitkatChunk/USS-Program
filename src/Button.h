@@ -31,11 +31,9 @@ private:
 	bool m_isCentered;
 	glm::vec2 m_mousePosition;
 	
-	
 protected:
 	// getters
 	bool m_mouseButtonClicked;
 	bool m_mouseOver();
 };
-
 #endif /* defined (__BUTTON__) */

@@ -26,5 +26,4 @@ private:
 
 	void m_checkBounds();
 };
-
 #endif /* defined (__PLAYER__) */

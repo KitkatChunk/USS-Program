@@ -1,11 +1,11 @@
 #include "DisplayObject.h"
 
-Scene * DisplayObject::getParent() const
+Scene* DisplayObject::getParent() const
 {
 	return m_pParentScene;
 }
 
-void DisplayObject::setParent(Scene * parent)
+void DisplayObject::setParent(Scene* parent)
 {
 	m_pParentScene = parent;
 }

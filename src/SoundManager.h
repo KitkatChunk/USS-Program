@@ -15,8 +15,9 @@ enum sound_type
 	SOUND_SFX = 1
 };
 
-class SoundManager {
-public:
+class SoundManager
+{
+	public:
 	static SoundManager* Instance()
 	{
 		if (s_pInstance == 0)
@@ -30,7 +31,8 @@ public:
 	bool load(std::string fileName, std::string id, sound_type type);
 	void playSound(std::string id, int loop);
 	void playMusic(std::string id, int loop);
-private:
+
+	private:
 	static SoundManager* s_pInstance;
 
 	std::map<std::string, Mix_Chunk*> m_sfxs;

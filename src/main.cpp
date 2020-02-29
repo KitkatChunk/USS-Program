@@ -20,7 +20,6 @@
 #include <glm\vec3.hpp>
 #include <glm\gtx\color_space.hpp>
 
-
 #include "TextureManager.h"
 #include "Game.h"
 #include "Config.h"

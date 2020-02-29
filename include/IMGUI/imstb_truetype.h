@@ -212,7 +212,6 @@
 //
 //  Advancing for the next character:
 //    Call GlyphHMetrics, and compute 'current_point += SF * advance'.
-// 
 //
 // ADVANCED USAGE
 //

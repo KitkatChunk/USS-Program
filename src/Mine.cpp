@@ -17,7 +17,6 @@ Mine::Mine()
 	//setVelocity(glm::vec2(0.0f, 0.0f));
 
 	TheSoundManager::Instance()->load("../Assets/audio/explosion.mp3", "explosion", SOUND_SFX);
-
 }
 
 Mine::~Mine()

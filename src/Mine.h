@@ -5,7 +5,7 @@
 
 class Mine : public DisplayObject
 {
-public:
+	public:
 	Mine();
 	~Mine();
 	
@@ -13,5 +13,4 @@ public:
 	void update() override;
 	void clean() override;
 };
-
 #endif /* defined (__MINE__) */

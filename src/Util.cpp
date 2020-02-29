@@ -1,6 +1,6 @@
 #include "Util.h"
-#include "GLM/gtc/constants.hpp"
-#include "GLM/gtx/norm.hpp"
+#include "glm/gtc/constants.hpp"
+#include "glm/gtx/norm.hpp"
 #include "Game.h"
 #include <cmath>
 #include <SDL.h>

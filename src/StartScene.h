@@ -8,7 +8,7 @@
 
 class StartScene : public Scene
 {
-public:
+	public:
 	// constructor
 	StartScene();
 	// destructor
@@ -24,7 +24,7 @@ public:
 	// getters
 	glm::vec2 getMousePosition();
 
-private:
+	private:
 	// Game Objects
 	Label* m_pStartLabel;
 	StartButton* m_pStartButton;

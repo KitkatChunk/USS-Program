@@ -19,19 +19,16 @@
 // texts, as its performance does not scale and it has limited undo).
 //
 // Non-trivial behaviors are modelled after Windows text controls.
-// 
 //
 // LICENSE
 //
 // See end of file for license information.
-//
 //
 // DEPENDENCIES
 //
 // Uses the C runtime function 'memmove', which you can override
 // by defining STB_TEXTEDIT_memmove before the implementation.
 // Uses no other functions. Performs no runtime allocations.
-//
 //
 // VERSION HISTORY
 //
@@ -70,7 +67,6 @@
 // This file behaves differently depending on what symbols you define
 // before including it.
 //
-//
 // Header-file mode:
 //
 //   If you do not define STB_TEXTEDIT_IMPLEMENTATION before including this,
@@ -95,7 +91,6 @@
 //
 //        [4 + 3 * sizeof(STB_TEXTEDIT_POSITIONTYPE)] * STB_TEXTEDIT_UNDOSTATE_COUNT
 //      +          sizeof(STB_TEXTEDIT_CHARTYPE)      * STB_TEXTEDIT_UNDOCHAR_COUNT
-//
 //
 // Implementation mode:
 //
@@ -242,11 +237,9 @@
 //          set, and make STB_TEXTEDIT_KEYTOCHAR check that the is-key-event bit is
 //          clear. STB_TEXTEDIT_KEYTYPE defaults to int, but you can #define it to
 //          anything other type you wante before including.
-//
 //     
 //   When rendering, you can read the cursor position and selection state from
 //   the STB_TexteditState.
-//
 //
 // Notes:
 //
@@ -265,12 +258,10 @@
 // efficient, but it's not horrible on modern computers. But you wouldn't
 // want to edit million-line files with it.
 
-
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 ////
 ////   Header-file mode
-////
 ////
 
 #ifndef INCLUDE_STB_TEXTEDIT_H
@@ -350,7 +341,6 @@ typedef struct
    StbUndoState undostate;
 } STB_TexteditState;
 
-
 ////////////////////////////////////////////////////////////////////////
 //
 //     StbTexteditRow
@@ -368,14 +358,11 @@ typedef struct
 } StbTexteditRow;
 #endif //INCLUDE_STB_TEXTEDIT_H
 
-
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 ////
 ////   Implementation mode
 ////
-////
-
 
 // implementation isn't include-guarded, since it might have indirectly
 // included just the "header" portion
@@ -385,7 +372,6 @@ typedef struct
 #include <string.h>
 #define STB_TEXTEDIT_memmove memmove
 #endif
-
 
 /////////////////////////////////////////////////////////////////////////////
 //

@@ -1,6 +1,7 @@
 #pragma once
 #ifndef __SCENE_STATE__
 #define __SCENE_STATE__
+
 enum SceneState
 {
 	NO_SCENE = -1,

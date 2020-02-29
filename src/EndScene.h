@@ -7,7 +7,7 @@
 
 class EndScene : public Scene
 {
-public:
+	public:
 	EndScene();
 	~EndScene();
 
@@ -18,7 +18,7 @@ public:
 	virtual void handleEvents() override;
 	virtual void start() override;
 
-private:
+	private:
 	Label* m_Label;
 };
 #endif /* defined (__END_SCENE__) */

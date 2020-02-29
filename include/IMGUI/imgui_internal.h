@@ -7,7 +7,6 @@
 // To implement maths operators for ImVec2 (disabled by default to not collide with using IM_VEC2_CLASS_EXTRA along with your own math types+operators)
 
 /*
-
 Index of this file:
 // Header mess
 // Forward declarations
@@ -18,7 +17,6 @@ Index of this file:
 // Main imgui context
 // Tab bar, tab item
 // Internal API
-
 */
 
 #pragma once

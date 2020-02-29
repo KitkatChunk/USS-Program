@@ -28,7 +28,7 @@
 
 class Game
 {
-public:
+	public:
 	static Game* Instance()
 	{
 		if (s_pInstance == nullptr)
@@ -63,7 +63,7 @@ public:
 	void changeSceneState(SceneState newState);
 	void quit();
 
-private:
+	private:
 	Game();
 	~Game();
 

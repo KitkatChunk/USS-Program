@@ -9,7 +9,7 @@
 
 class Util
 {
-public:
+	public:
 	Util();
 	~Util();
 

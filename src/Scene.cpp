@@ -8,7 +8,6 @@ Scene::~Scene()
 {
 }
 
-
 void Scene::addChild(DisplayObject * child)
 {
 	m_displayList.push_back(child);
@@ -24,7 +23,6 @@ void Scene::removeAllChildren()
 	m_displayList.resize(0);
 	m_displayList.shrink_to_fit();
 }
-
 
 int Scene::numberOfChildren()
 {

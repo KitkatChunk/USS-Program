@@ -10,6 +10,4 @@ enum ShapeType
 	SEMI_CIRCLE_BOTTOM,
 	SYMMETRICAL
 };
-
-
 #endif /* defined (__SHAPE_TYPE__) */
