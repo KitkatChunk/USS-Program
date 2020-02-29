@@ -11,7 +11,7 @@ Player::Player() :m_maxSpeed(10.0f), m_isMoving(false)
 	setWidth(size.x);
 	setHeight(size.y);
 
-	setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, 435.0f));
+	setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, 400.0f));
 	setIsColliding(false);
 	setType(GameObjectType::PLAYER);
 	setVelocity(glm::vec2(0.0f, 0.0f));

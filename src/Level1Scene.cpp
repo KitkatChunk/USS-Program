@@ -15,8 +15,10 @@ void Level1Scene::draw()
 {
 	m_pBackground->draw();
 	m_pMine->draw();
-	m_pPlayer->draw();
 	m_pEnemy->draw();
+	m_pPlayer->draw();
+	m_pHealthLabel->draw();
+	m_pScoreLabel->draw();
 }
 
 void Level1Scene::update()
@@ -30,7 +32,6 @@ void Level1Scene::update()
 	//m_pPlane->setPosition(glm::vec2(m_mousePosition.x, m_pPlane->getPosition().y));
 
 	//CollisionManager::AABBCheck(m_pPlane, m_pMine);
-
 	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pMine);
 }
 
@@ -58,19 +59,19 @@ void Level1Scene::handleEvents()
 		case SDL_MOUSEBUTTONDOWN:
 			switch(event.button.button)
 			{
-			case SDL_BUTTON_LEFT:
-				break;
+				case SDL_BUTTON_LEFT:
+					break;
 			}
-		
 			break;
+			
 		case SDL_MOUSEBUTTONUP:
 			switch (event.button.button)
 			{
-			case SDL_BUTTON_LEFT:
-				
-				break;
+				case SDL_BUTTON_LEFT:
+					break;
 			}
 			break;
+			
 		case SDL_MOUSEWHEEL:
 			wheel = event.wheel.y;
 			break;
@@ -78,61 +79,57 @@ void Level1Scene::handleEvents()
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)
 			{
-			case SDLK_ESCAPE:
-				TheGame::Instance()->quit();
-				break;
-			case SDLK_1:
-				TheGame::Instance()->changeSceneState(SceneState::START_SCENE);
-				break;
-			case SDLK_2:
-				TheGame::Instance()->changeSceneState(SceneState::END_SCENE);
-				break;
+				case SDLK_ESCAPE:
+					TheGame::Instance()->quit();
+					break;
+				case SDLK_1:
+					TheGame::Instance()->changeSceneState(SceneState::START_SCENE);
+					break;
+				case SDLK_2:
+					TheGame::Instance()->changeSceneState(SceneState::END_SCENE);
+					break;
 			
 				//Movement Controls
-			case SDLK_w:
+				case SDLK_w:
+					break;
+				case SDLK_s:
+					break;
 				
-				break;
-			case SDLK_s:
-				
-				break;
-			case SDLK_a:
-				m_pPlayer->move(LEFT);
-				break;
-			case SDLK_d:
-				m_pPlayer->move(RIGHT);
-				break;
+				case SDLK_a:
+					m_pPlayer->move(LEFT);
+					break;
+				case SDLK_d:
+					m_pPlayer->move(RIGHT);
+					break;
 				case SDLK_LEFT:
-				m_pPlayer->move(LEFT);
-				break;
+					m_pPlayer->move(LEFT);
+					break;
 				case SDLK_RIGHT:
-				m_pPlayer->move(RIGHT);
-				break;
+					m_pPlayer->move(RIGHT);
+					break;
 			}
-			
 			break;
+			
 		case SDL_KEYUP:
 			switch (event.key.keysym.sym)
 			{
-			case SDLK_w:
-				
-				break;
+				case SDLK_w:
+					break;
+				case SDLK_s:
+					break;
 
-			case SDLK_s:
-				
-				break;
-
-			case SDLK_a:
-				m_pPlayer->setIsMoving(false);
-				break;
-			case SDLK_d:
-				m_pPlayer->setIsMoving(false);
-				break;
+				case SDLK_a:
+					m_pPlayer->setIsMoving(false);
+					break;
+				case SDLK_d:
+					m_pPlayer->setIsMoving(false);
+					break;
 				case SDLK_LEFT:
-				m_pPlayer->setIsMoving(false);
-				break;
+					m_pPlayer->setIsMoving(false);
+					break;
 				case SDLK_RIGHT:
-				m_pPlayer->setIsMoving(false);
-				break;
+					m_pPlayer->setIsMoving(false);
+					break;
 			}
 			break;
 			
@@ -144,6 +141,15 @@ void Level1Scene::handleEvents()
 
 void Level1Scene::start()
 {
+	SDL_Color yellow = { 255, 255, 0, 255 };
+	m_pHealthLabel = new Label("Health", "Dock51", 26, yellow, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.1f, Config::SCREEN_HEIGHT * 0.95f));
+	addChild(m_pHealthLabel);
+
+	m_pScoreLabel = new Label("Score", "Dock51", 26, yellow, 
+		glm::vec2(Config::SCREEN_WIDTH * 0.6f, Config::SCREEN_HEIGHT * 0.95f));
+	addChild(m_pScoreLabel);
+	
 	m_pPlayer = new Player(); // instantiates Player
 	addChild(m_pPlayer);
 
@@ -153,7 +159,7 @@ void Level1Scene::start()
 	m_pMine = new Mine(); // instantiates Island
 	addChild(m_pMine);
 
-	m_pBackground = new Background();
+	m_pBackground = new Background(); //instantiates background
 	addChild(m_pBackground);
 }
 

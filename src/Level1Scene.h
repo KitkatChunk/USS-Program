@@ -7,6 +7,7 @@
 #include "Mine.h"
 #include "Enemy.h"
 #include "Background.h"
+#include "Label.h"
 
 class Level1Scene : public Scene
 {
@@ -25,6 +26,8 @@ class Level1Scene : public Scene
 
 	private:
 	// game objects
+	Label* m_pHealthLabel;
+	Label* m_pScoreLabel;
 	Background* m_pBackground;
 	Player* m_pPlayer;
 	Enemy* m_pEnemy;

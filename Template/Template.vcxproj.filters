@@ -31,7 +31,7 @@
     <Filter Include="Enums">
       <UniqueIdentifier>{c00e61a2-9515-4297-a699-76a9a5f3005e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Objects\Headers">
+    <Filter Include="Game Objects\Object Headers">
       <UniqueIdentifier>{a8ab221a-ef6c-4e7f-bb03-d92bc9523f9f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -189,25 +189,25 @@
       <Filter>Enums</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Background.h">
-      <Filter>Game Objects\Headers</Filter>
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Button.h">
-      <Filter>Game Objects\Headers</Filter>
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Enemy.h">
-      <Filter>Game Objects\Headers</Filter>
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Label.h">
-      <Filter>Game Objects\Headers</Filter>
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Mine.h">
-      <Filter>Game Objects\Headers</Filter>
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Player.h">
-      <Filter>Game Objects\Headers</Filter>
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\StartButton.h">
-      <Filter>Game Objects\Headers</Filter>
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
