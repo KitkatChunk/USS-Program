@@ -12,5 +12,10 @@ class Mine : public DisplayObject
 	void draw() override;
 	void update() override;
 	void clean() override;
+
+	private:
+	void _move();
+	void _checkBounds();
+	void _reset();
 };
 #endif /* defined (__MINE__) */

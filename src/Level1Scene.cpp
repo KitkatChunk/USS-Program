@@ -26,6 +26,9 @@ void Level1Scene::update()
 	m_pPlayer->update();
 	m_pEnemy->update();
 	m_pBackground->update();
+	m_pMine->update();
+
+	m_pHealthLabel->setText("Health: " + std::to_string(_health));
 	//m_pPlane->setVelocity(m_pPlane->getVelocity() * 0.97f);
 	
 	// plane moving with mouse motion
@@ -33,6 +36,11 @@ void Level1Scene::update()
 
 	//CollisionManager::AABBCheck(m_pPlane, m_pMine);
 	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pMine);
+	if(m_pMine->getIsColliding())
+	{
+		std::cout<<"hit"<< std::endl;
+		damage();
+	}
 }
 
 void Level1Scene::clean()
@@ -141,8 +149,10 @@ void Level1Scene::handleEvents()
 
 void Level1Scene::start()
 {
+	_health = 10;
+	
 	SDL_Color yellow = { 255, 255, 0, 255 };
-	m_pHealthLabel = new Label("Health", "Dock51", 26, yellow, 
+	m_pHealthLabel = new Label("Health: ", "Dock51", 26, yellow, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.1f, Config::SCREEN_HEIGHT * 0.95f));
 	addChild(m_pHealthLabel);
 
@@ -161,6 +171,11 @@ void Level1Scene::start()
 
 	m_pBackground = new Background(); //instantiates background
 	addChild(m_pBackground);
+}
+
+void Level1Scene::damage()
+{
+	_health--;
 }
 
 glm::vec2 Level1Scene::getMousePosition()

@@ -1,6 +1,7 @@
 #include "CollisionManager.h"
 #include "Util.h"
 #include <algorithm>
+#include "Level1Scene.h"
 
 int CollisionManager::squaredDistance(glm::vec2 P1, glm::vec2 P2)
 {

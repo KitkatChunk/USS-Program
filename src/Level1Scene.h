@@ -20,9 +20,12 @@ class Level1Scene : public Scene
 	void clean() override;
 	void handleEvents() override;
 	void start() override;
+	void damage();
 
 	// getters
 	glm::vec2 getMousePosition();
+
+	int _health;
 
 	private:
 	// game objects
