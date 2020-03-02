@@ -15,6 +15,7 @@ void Level1Scene::draw()
 {
 	m_pBackground->draw();
 	m_pMine->draw();
+	m_pBullet->draw();
 	m_pEnemy->draw();
 	m_pPlayer->draw();
 	m_pHealthLabel->draw();
@@ -25,6 +26,8 @@ void Level1Scene::update()
 {
 	m_pPlayer->update();
 	m_pEnemy->update();
+	m_pBullet->respawn(m_pPlayer);
+	m_pBullet->update();
 	m_pBackground->update();
 	m_pMine->update();
 
@@ -98,11 +101,6 @@ void Level1Scene::handleEvents()
 					break;
 			
 				//Movement Controls
-				case SDLK_w:
-					break;
-				case SDLK_s:
-					break;
-				
 				case SDLK_a:
 					m_pPlayer->move(LEFT);
 					break;
@@ -115,6 +113,10 @@ void Level1Scene::handleEvents()
 				case SDLK_RIGHT:
 					m_pPlayer->move(RIGHT);
 					break;
+
+				case SDLK_SPACE:
+				m_pBullet->fire();
+				break;
 			}
 			break;
 			
@@ -138,6 +140,8 @@ void Level1Scene::handleEvents()
 				case SDLK_RIGHT:
 					m_pPlayer->setIsMoving(false);
 					break;
+				case SDLK_SPACE:
+				break;
 			}
 			break;
 			
@@ -162,6 +166,9 @@ void Level1Scene::start()
 	
 	m_pPlayer = new Player(); // instantiates Player
 	addChild(m_pPlayer);
+
+	m_pBullet = new Bullet();
+	addChild(m_pBullet);
 
 	m_pEnemy = new Enemy(); // instantiates Enemy
 	addChild(m_pEnemy);

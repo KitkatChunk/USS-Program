@@ -8,6 +8,7 @@
 #include "Enemy.h"
 #include "Background.h"
 #include "Label.h"
+#include "Bullet.h"
 
 class Level1Scene : public Scene
 {
@@ -35,6 +36,7 @@ class Level1Scene : public Scene
 	Player* m_pPlayer;
 	Enemy* m_pEnemy;
 	Mine* m_pMine;
+	Bullet* m_pBullet;
 
 	// private data member
 	glm::vec2 m_mousePosition;

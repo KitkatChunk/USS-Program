@@ -111,6 +111,9 @@
     <ClCompile Include="..\src\Background.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Bullet.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -207,6 +210,9 @@
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\StartButton.h">
+      <Filter>Game Objects\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Bullet.h">
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
   </ItemGroup>
