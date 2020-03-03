@@ -1,7 +1,7 @@
 #include "StartScene.h"
 #include "Game.h"
 #include <ctime>
-#include "GLM/gtx/string_cast.hpp"
+#include "glm/gtx/string_cast.hpp"
 #include <algorithm>
 #include <iomanip>
 
@@ -28,7 +28,6 @@ void StartScene::update()
 
 void StartScene::clean()
 {
-	delete m_pStartLabel;
 	removeAllChildren();
 }
 

@@ -16,7 +16,7 @@ EndScene::~EndScene()
 
 void EndScene::draw()
 {
-	m_Label->draw();
+	m_EndLabel->draw();
 }
 
 void EndScene::update()
@@ -25,7 +25,6 @@ void EndScene::update()
 
 void EndScene::clean()
 {
-	delete m_Label;
 	removeAllChildren();
 }
 
@@ -66,7 +65,7 @@ void EndScene::handleEvents()
 void EndScene::start()
 {
 	SDL_Color red = { 255, 0, 0, 255 };
-	m_Label = new Label("END SCENE", "Dock51", 80, red, glm::vec2(400.0f, 40.0f));
-	m_Label->setParent(this);
-	addChild(m_Label);
+	m_EndLabel = new Label("GAME OVER", "Dock51", 80, red, glm::vec2(Config::SCREEN_WIDTH * 0.5f, 100.0f));
+	m_EndLabel->setParent(this);
+	addChild(m_EndLabel);
 }

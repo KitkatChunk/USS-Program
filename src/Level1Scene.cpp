@@ -183,9 +183,18 @@ void Level1Scene::start()
 void Level1Scene::damage()
 {
 	_health--;
+	death();
 }
 
 glm::vec2 Level1Scene::getMousePosition()
 {
 	return m_mousePosition;
+}
+
+void Level1Scene::death()
+{
+	if(_health <= 0)
+	{
+		Game::Instance()->changeSceneState(END_SCENE);
+	}
 }

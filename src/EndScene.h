@@ -19,6 +19,6 @@ class EndScene : public Scene
 	virtual void start() override;
 
 	private:
-	Label* m_Label;
+	Label* m_EndLabel;
 };
 #endif /* defined (__END_SCENE__) */
