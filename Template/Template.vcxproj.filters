@@ -114,6 +114,9 @@
     <ClCompile Include="..\src\Bullet.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ResetButton.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -213,6 +216,9 @@
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Bullet.h">
+      <Filter>Game Objects\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ResetButton.h">
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
   </ItemGroup>

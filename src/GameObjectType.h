@@ -11,6 +11,7 @@ enum GameObjectType {
 	ENEMY,
 	BACKGROUND,
 	START_BUTTON,
+	RESET_BUTTON,
 	NUM_OF_TYPES
 };
 #endif /* defined (__GAME_OBJECT_TYPE__)*/

@@ -176,6 +176,7 @@
     <ClCompile Include="..\src\Level1Scene.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Player.cpp" />
+    <ClCompile Include="..\src\ResetButton.cpp" />
     <ClCompile Include="..\src\Scene.cpp" />
     <ClCompile Include="..\src\SoundManager.cpp" />
     <ClCompile Include="..\src\StartButton.cpp" />
@@ -208,6 +209,7 @@
     <ClInclude Include="..\src\Level1Scene.h" />
     <ClInclude Include="..\src\Move.h" />
     <ClInclude Include="..\src\Player.h" />
+    <ClInclude Include="..\src\ResetButton.h" />
     <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\SceneState.h" />
     <ClInclude Include="..\src\ShapeType.h" />

@@ -4,6 +4,7 @@
 
 #include "Scene.h"
 #include "Label.h"
+#include "ResetButton.h"
 
 class EndScene : public Scene
 {
@@ -18,7 +19,12 @@ class EndScene : public Scene
 	virtual void handleEvents() override;
 	virtual void start() override;
 
+	glm::vec2 getMousePosition();
+
 	private:
 	Label* m_EndLabel;
+	ResetButton* m_pResetButton;
+
+	glm::vec2 m_mousePosition;
 };
 #endif /* defined (__END_SCENE__) */

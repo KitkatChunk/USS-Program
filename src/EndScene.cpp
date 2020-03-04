@@ -17,10 +17,13 @@ EndScene::~EndScene()
 void EndScene::draw()
 {
 	m_EndLabel->draw();
+	m_pResetButton->draw();
 }
 
 void EndScene::update()
 {
+	m_pResetButton->setMousePosition(m_mousePosition);
+	m_pResetButton->ButtonClick();
 }
 
 void EndScene::clean()
@@ -31,12 +34,36 @@ void EndScene::clean()
 void EndScene::handleEvents()
 {
 	SDL_Event event;
+	
 	if (SDL_PollEvent(&event))
 	{
 		switch (event.type)
 		{
 		case SDL_QUIT:
 			TheGame::Instance()->quit();
+			break;
+
+			case SDL_MOUSEMOTION:
+			m_mousePosition.x = event.motion.x;
+			m_mousePosition.y = event.motion.y;
+			break;
+
+		case SDL_MOUSEBUTTONDOWN:
+			switch (event.button.button)
+			{
+			case SDL_BUTTON_LEFT:
+				m_pResetButton->setMouseButtonClicked(true);
+				break;
+			}
+			break;
+			
+		case SDL_MOUSEBUTTONUP:
+			switch (event.button.button)
+			{
+			case SDL_BUTTON_LEFT:
+				m_pResetButton->setMouseButtonClicked(false);
+				break;
+			}
 			break;
 			
 		case SDL_KEYDOWN:
@@ -68,4 +95,13 @@ void EndScene::start()
 	m_EndLabel = new Label("GAME OVER", "Dock51", 80, red, glm::vec2(Config::SCREEN_WIDTH * 0.5f, 100.0f));
 	m_EndLabel->setParent(this);
 	addChild(m_EndLabel);
+
+	m_pResetButton = new ResetButton();
+	m_pResetButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
+	addChild(m_pResetButton);
+}
+
+glm::vec2 EndScene::getMousePosition()
+{
+	return m_mousePosition;
 }
