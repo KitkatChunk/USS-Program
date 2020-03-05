@@ -15,6 +15,7 @@ Bullet::Bullet()
 	_reset();
 	setIsColliding(false);
 	setType(GameObjectType::BULLET);
+	TheSoundManager::Instance()->load("../Assets/audio/thunder.ogg", "hit", SOUND_SFX);
 }
 
 Bullet::~Bullet()

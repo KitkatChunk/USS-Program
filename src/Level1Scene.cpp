@@ -44,6 +44,8 @@ void Level1Scene::update()
 		std::cout<<"hit"<< std::endl;
 		damage();
 	}
+
+	CollisionManager::squaredRadiusCheck(m_pBullet, m_pEnemy);
 }
 
 void Level1Scene::clean()

@@ -31,9 +31,9 @@ bool CollisionManager::squaredRadiusCheck(GameObject* object1, GameObject* objec
 				std::cout << "Collision with MINE!" << std::endl;
 				TheSoundManager::Instance()->playSound("explosion", 0);
 				break;
-			case CLOUD:
-				std::cout << "Collision with CLOUD!" << std::endl;
-				TheSoundManager::Instance()->playSound("thunder", 0);
+			case ENEMY:
+				std::cout << "Collision with ENEMY!" << std::endl;
+				TheSoundManager::Instance()->playSound("hit", 0);
 				break;
 			default:
 				//std::cout << "Collision with unknown type!" << std::endl;
@@ -221,9 +221,9 @@ bool CollisionManager::circleAABBCheck(GameObject* object1, GameObject* object2)
 				std::cout << "Collision with MINE!" << std::endl;
 				TheSoundManager::Instance()->playSound("explosion", 0);
 				break;
-			case CLOUD:
-				std::cout << "Collision with CLOUD!" << std::endl;
-				TheSoundManager::Instance()->playSound("thunder", 0);
+			case ENEMY:
+				std::cout << "Collision with ENEMY!" << std::endl;
+				TheSoundManager::Instance()->playSound("hit", 0);
 				break;
 
 				if ((attackVector.x > 0 && attackVector.y < 0) || (attackVector.x < 0 && attackVector.y < 0))
