@@ -22,7 +22,6 @@ class Level1Scene : public Scene
 	void handleEvents() override;
 	void start() override;
 	void damage();
-	void death();
 
 	// getters
 	glm::vec2 getMousePosition();

@@ -37,11 +37,8 @@ void Level1Scene::update()
 	// plane moving with mouse motion
 	//m_pPlane->setPosition(glm::vec2(m_mousePosition.x, m_pPlane->getPosition().y));
 
-	//CollisionManager::AABBCheck(m_pPlane, m_pMine);
-	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pMine);
-	if(m_pMine->getIsColliding())
+	if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pMine))
 	{
-		std::cout<<"hit"<< std::endl;
 		damage();
 	}
 
@@ -185,18 +182,14 @@ void Level1Scene::start()
 void Level1Scene::damage()
 {
 	_health--;
-	death();
+	
+	if(_health <= 0)
+	{
+		Game::Instance()->changeSceneState(END_SCENE);
+	}
 }
 
 glm::vec2 Level1Scene::getMousePosition()
 {
 	return m_mousePosition;
-}
-
-void Level1Scene::death()
-{
-	if(_health <= 0)
-	{
-		Game::Instance()->changeSceneState(END_SCENE);
-	}
 }
