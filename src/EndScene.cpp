@@ -18,12 +18,16 @@ void EndScene::draw()
 {
 	m_EndLabel->draw();
 	m_pResetButton->draw();
+	m_pQuitButton->draw();
 }
 
 void EndScene::update()
 {
 	m_pResetButton->setMousePosition(m_mousePosition);
 	m_pResetButton->ButtonClick();
+
+	m_pQuitButton->setMousePosition(m_mousePosition);
+	m_pQuitButton->ButtonClick();
 }
 
 void EndScene::clean()
@@ -53,6 +57,7 @@ void EndScene::handleEvents()
 			{
 			case SDL_BUTTON_LEFT:
 				m_pResetButton->setMouseButtonClicked(true);
+				m_pQuitButton->setMouseButtonClicked(true);
 				break;
 			}
 			break;
@@ -62,6 +67,7 @@ void EndScene::handleEvents()
 			{
 			case SDL_BUTTON_LEFT:
 				m_pResetButton->setMouseButtonClicked(false);
+				m_pQuitButton->setMouseButtonClicked(false);
 				break;
 			}
 			break;
@@ -99,6 +105,10 @@ void EndScene::start()
 	m_pResetButton = new ResetButton();
 	m_pResetButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
 	addChild(m_pResetButton);
+
+	m_pQuitButton = new QuitButton();
+	m_pQuitButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.7f));
+	addChild(m_pQuitButton);
 }
 
 glm::vec2 EndScene::getMousePosition()

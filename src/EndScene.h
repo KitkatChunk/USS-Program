@@ -5,6 +5,7 @@
 #include "Scene.h"
 #include "Label.h"
 #include "ResetButton.h"
+#include "QuitButton.h"
 
 class EndScene : public Scene
 {
@@ -24,6 +25,7 @@ class EndScene : public Scene
 	private:
 	Label* m_EndLabel;
 	ResetButton* m_pResetButton;
+	QuitButton* m_pQuitButton;
 
 	glm::vec2 m_mousePosition;
 };
