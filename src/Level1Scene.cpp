@@ -32,6 +32,7 @@ void Level1Scene::update()
 	m_pMine->update();
 
 	m_pHealthLabel->setText("Health: " + std::to_string(_health));
+	m_pScoreLabel->setText("Score: " + std::to_string(_score));
 	//m_pPlane->setVelocity(m_pPlane->getVelocity() * 0.97f);
 	
 	// plane moving with mouse motion
@@ -42,7 +43,10 @@ void Level1Scene::update()
 		damage();
 	}
 
-	CollisionManager::squaredRadiusCheck(m_pBullet, m_pEnemy);
+	if(CollisionManager::squaredRadiusCheck(m_pBullet, m_pEnemy))
+	{
+		_score= _score + 100;
+	}
 }
 
 void Level1Scene::clean()
