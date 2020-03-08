@@ -3,7 +3,7 @@
 
 Background::Background()
 {
-	TheTextureManager::Instance()->load("../Assets/textures/ocean.gif",
+	TheTextureManager::Instance()->load("../Assets/textures/background.png",
 		"background", TheGame::Instance()->getRenderer());
 
 	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("background");
@@ -53,5 +53,8 @@ void Background::_checkBounds()
 
 void Background::_reset()
 {
-	setPosition(glm::vec2(0, -960));
+	//For ocean
+	//setPosition(glm::vec2(0, -960));
+
+	setPosition(glm::vec2(0, -200));
 }
