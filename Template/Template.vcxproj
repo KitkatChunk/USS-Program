@@ -24,6 +24,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Template</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Template</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -185,6 +186,7 @@
     <ClCompile Include="..\src\ResetButton.cpp" />
     <ClCompile Include="..\src\Scene.cpp" />
     <ClCompile Include="..\src\SoundManager.cpp" />
+    <ClCompile Include="..\src\SplashScene.cpp" />
     <ClCompile Include="..\src\StartButton.cpp" />
     <ClCompile Include="..\src\StartScene.cpp" />
     <ClCompile Include="..\src\TextureManager.cpp" />
@@ -224,6 +226,7 @@
     <ClInclude Include="..\src\SceneState.h" />
     <ClInclude Include="..\src\ShapeType.h" />
     <ClInclude Include="..\src\SoundManager.h" />
+    <ClInclude Include="..\src\SplashScene.h" />
     <ClInclude Include="..\src\StartButton.h" />
     <ClInclude Include="..\src\StartScene.h" />
     <ClInclude Include="..\src\SteeringState.h" />

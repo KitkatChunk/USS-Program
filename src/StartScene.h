@@ -30,7 +30,6 @@ class StartScene : public Scene
 	Label* m_pStartLabel;
 	StartButton* m_pStartButton;
 	QuitButton* m_pQuitButton;
-	
 
 	// private data member
 	glm::vec2 m_mousePosition;
