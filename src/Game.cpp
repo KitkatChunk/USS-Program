@@ -88,7 +88,7 @@ void Game::start()
 {
 	m_currentSceneState = SceneState::NO_SCENE;
 
-	changeSceneState(SceneState::START_SCENE);
+	changeSceneState(SceneState::SPLASH_SCENE);
 }
 
 SDL_Renderer * Game::getRenderer()
@@ -130,6 +130,10 @@ void Game::changeSceneState(SceneState newState)
 
 		switch (m_currentSceneState)
 		{
+		case SceneState::SPLASH_SCENE:
+			m_currentScene = new SplashScene();
+			std::cout << "splash scene activated" << std::endl;
+			break;
 		case SceneState::START_SCENE:
 			m_currentScene = new StartScene();
 			std::cout << "start scene activated" << std::endl;
