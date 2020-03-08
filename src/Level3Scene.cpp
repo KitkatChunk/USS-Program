@@ -1,17 +1,17 @@
-#include "Level1Scene.h"
+#include "Level3Scene.h"
 #include "Game.h"
 #include <iostream>
 
-Level1Scene::Level1Scene()
+Level3Scene::Level3Scene()
 {
 	start();
 }
 
-Level1Scene::~Level1Scene()
+Level3Scene::~Level3Scene()
 {
 }
 
-void Level1Scene::draw()
+void Level3Scene::draw()
 {
 	m_pBackground->draw();
 	m_pMine->draw();
@@ -22,7 +22,7 @@ void Level1Scene::draw()
 	m_pScoreLabel->draw();
 }
 
-void Level1Scene::update()
+void Level3Scene::update()
 {
 	m_pPlayer->update();
 	m_pEnemy->update();
@@ -49,17 +49,17 @@ void Level1Scene::update()
 
 		if(_score == 500)
 		{
-			TheGame::Instance()->changeSceneState(SceneState::LEVEL2_SCENE);
+			TheGame::Instance()->changeSceneState(SceneState::WIN_SCENE);
 		}
 	}
 }
 
-void Level1Scene::clean()
+void Level3Scene::clean()
 {
 	//removeAllChildren();
 }
 
-void Level1Scene::handleEvents()
+void Level3Scene::handleEvents()
 {
 	int wheel = 0;
 
@@ -110,9 +110,6 @@ void Level1Scene::handleEvents()
 					break;
 				case SDLK_3:
 					TheGame::Instance()->changeSceneState(SceneState::LEVEL2_SCENE);
-					break;
-				case SDLK_4:
-					TheGame::Instance()->changeSceneState(SceneState::LEVEL3_SCENE);
 					break;
 			
 				//Movement Controls
@@ -166,7 +163,7 @@ void Level1Scene::handleEvents()
 	}
 }
 
-void Level1Scene::start()
+void Level3Scene::start()
 {
 	_health = 10;
 	
@@ -195,7 +192,7 @@ void Level1Scene::start()
 	addChild(m_pBackground);
 }
 
-void Level1Scene::damage()
+void Level3Scene::damage()
 {
 	_health--;
 	
@@ -205,7 +202,7 @@ void Level1Scene::damage()
 	}
 }
 
-glm::vec2 Level1Scene::getMousePosition()
+glm::vec2 Level3Scene::getMousePosition()
 {
 	return m_mousePosition;
 }

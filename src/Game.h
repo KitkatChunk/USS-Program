@@ -24,6 +24,8 @@
 // Scenes
 #include "StartScene.h"
 #include "Level1Scene.h"
+#include "Level2Scene.h"
+#include "Level3Scene.h"
 #include "EndScene.h"
 
 class Game

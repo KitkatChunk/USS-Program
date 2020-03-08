@@ -7,7 +7,10 @@ enum SceneState
 	NO_SCENE = -1,
 	START_SCENE,
 	LEVEL1_SCENE,
+	LEVEL2_SCENE,
+	LEVEL3_SCENE,
 	END_SCENE,
+	WIN_SCENE,
 	NUM_OF_SCENES
 };
 #endif /* defined (__SCENE_STATE__) */
