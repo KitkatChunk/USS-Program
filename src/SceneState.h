@@ -5,6 +5,7 @@
 enum SceneState
 {
 	NO_SCENE = -1,
+	SPLASH_SCENE,
 	START_SCENE,
 	LEVEL1_SCENE,
 	LEVEL2_SCENE,

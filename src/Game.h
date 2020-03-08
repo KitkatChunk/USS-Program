@@ -22,6 +22,7 @@
 #include "Util.h"
 
 // Scenes
+#include "SplashScene.h"
 #include "StartScene.h"
 #include "Level1Scene.h"
 #include "Level2Scene.h"
