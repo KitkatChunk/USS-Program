@@ -27,6 +27,7 @@
 #include "Level2Scene.h"
 #include "Level3Scene.h"
 #include "EndScene.h"
+#include "WinScene.h"
 
 class Game
 {

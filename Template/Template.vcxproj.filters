@@ -126,6 +126,9 @@
     <ClCompile Include="..\src\Level3Scene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\WinScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -237,6 +240,9 @@
       <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Level3Scene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WinScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
