@@ -15,6 +15,11 @@ Player::Player() :m_maxSpeed(10.0f), m_isMoving(false)
 	setIsColliding(false);
 	setType(GameObjectType::PLAYER);
 	setVelocity(glm::vec2(0.0f, 0.0f));
+
+	TheSoundManager::Instance()->load("../Assets/audio/space.ogg",
+		"bgm", sound_type::SOUND_MUSIC);
+
+	TheSoundManager::Instance()->playMusic("bgm", -1);
 }
 
 Player::~Player()
