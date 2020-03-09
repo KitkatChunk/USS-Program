@@ -132,6 +132,9 @@
     <ClCompile Include="..\src\SplashScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Logo.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -250,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="..\src\SplashScene.h">
       <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Logo.h">
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

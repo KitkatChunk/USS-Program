@@ -16,8 +16,7 @@ SplashScene::~SplashScene()
 
 void SplashScene::draw()
 {
-	//m_EndLabel->draw();
-
+	m_pLogo->draw();
 }
 
 void SplashScene::update()
@@ -92,9 +91,10 @@ void SplashScene::start()
 {
 	count=0;
 	seconds = 0;
-	//m_EndLabel->setParent(this);
-	//addChild(m_EndLabel);
 
+	m_pLogo = new Logo();
+	m_pLogo->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
+	addChild(m_pLogo);
 }
 
 glm::vec2 SplashScene::getMousePosition()

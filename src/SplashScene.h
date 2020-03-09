@@ -4,6 +4,7 @@
 
 #include "Scene.h"
 #include "Label.h"
+#include "Logo.h"
 
 class SplashScene : public Scene
 {
@@ -25,6 +26,8 @@ class SplashScene : public Scene
 	int count;
 	double seconds;
 
+	Logo* m_pLogo;
+	
 	glm::vec2 m_mousePosition;
 };
 #endif /* defined (__WIN_SCENE__) */

@@ -4,6 +4,7 @@
 
 enum GameObjectType {
 	NONE = -1,
+	LOGO,
 	HAZARD,
 	PLAYER,
 	BULLET,
