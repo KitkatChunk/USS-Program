@@ -14,7 +14,7 @@ Level1Scene::~Level1Scene()
 void Level1Scene::draw()
 {
 	m_pBackground->draw();
-	m_pMine->draw();
+	m_pHazard->draw();
 	m_pBullet->draw();
 	m_pEnemy->draw();
 	m_pPlayer->draw();
@@ -29,7 +29,7 @@ void Level1Scene::update()
 	m_pBullet->respawn(m_pPlayer);
 	m_pBullet->update();
 	m_pBackground->update();
-	m_pMine->update();
+	m_pHazard->update();
 
 	m_pHealthLabel->setText("Health: " + std::to_string(_health));
 	m_pScoreLabel->setText("Score: " + std::to_string(_score));
@@ -38,7 +38,7 @@ void Level1Scene::update()
 	// plane moving with mouse motion
 	//m_pPlane->setPosition(glm::vec2(m_mousePosition.x, m_pPlane->getPosition().y));
 
-	if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pMine))
+	if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard))
 	{
 		damage();
 	}
@@ -188,8 +188,8 @@ void Level1Scene::start()
 	m_pEnemy = new Enemy(); // instantiates Enemy
 	addChild(m_pEnemy);
 
-	m_pMine = new Mine(); // instantiates Island
-	addChild(m_pMine);
+	m_pHazard = new Mine(); // instantiates Island
+	addChild(m_pHazard);
 
 	m_pBackground = new Background(); //instantiates background
 	addChild(m_pBackground);

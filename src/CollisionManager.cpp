@@ -27,8 +27,8 @@ bool CollisionManager::squaredRadiusCheck(GameObject* object1, GameObject* objec
 
 			switch (object2->getType())
 			{
-			case MINE:
-				std::cout << "Collision with MINE!" << std::endl;
+			case HAZARD:
+				std::cout << "Collision with HAZARD!" << std::endl;
 				TheSoundManager::Instance()->playSound("explosion", 0);
 				break;
 			case ENEMY:
@@ -73,8 +73,8 @@ bool CollisionManager::AABBCheck(GameObject* object1, GameObject* object2)
 
 			switch (object2->getType())
 			{
-			case MINE:
-				std::cout << "Collision with Mine!" << std::endl;
+			case HAZARD:
+				std::cout << "Collision with HAZARD!" << std::endl;
 				TheSoundManager::Instance()->playSound("explosion", 0);
 				break;
 			case ENEMY:
@@ -217,8 +217,8 @@ bool CollisionManager::circleAABBCheck(GameObject* object1, GameObject* object2)
 			//std::cout << "Angle: " << angle << std::endl;
 
 			switch (object2->getType()) {
-			case MINE:
-				std::cout << "Collision with MINE!" << std::endl;
+			case HAZARD:
+				std::cout << "Collision with HAZARD!" << std::endl;
 				TheSoundManager::Instance()->playSound("explosion", 0);
 				break;
 			case ENEMY:

@@ -36,7 +36,7 @@ class Level3Scene : public Scene
 	Background* m_pBackground;
 	Player* m_pPlayer;
 	Enemy* m_pEnemy;
-	Mine* m_pMine;
+	Mine* m_pHazard;
 	Bullet* m_pBullet;
 
 	// private data member

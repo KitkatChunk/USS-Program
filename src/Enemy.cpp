@@ -3,7 +3,7 @@
 
 Enemy::Enemy()
 {
-	TheTextureManager::Instance()->load("../Assets/textures/planet.png",
+	TheTextureManager::Instance()->load("../Assets/textures/alien.png",
 		"enemy", TheGame::Instance()->getRenderer());
 
 	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("enemy");
@@ -13,6 +13,7 @@ Enemy::Enemy()
 	setVelocity(glm::vec2(3,0));
 	setIsColliding(false);
 	setType(GameObjectType::ENEMY);
+	TheSoundManager::Instance()->load("../Assets/audio/destruction.wav", "hit", SOUND_SFX);
 }
 
 Enemy::~Enemy()

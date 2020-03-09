@@ -3,7 +3,7 @@
 
 Bullet::Bullet()
 {
-	TheTextureManager::Instance()->load("../Assets/textures/tile.png",
+	TheTextureManager::Instance()->load("../Assets/textures/bullet.png",
 		"bullet", TheGame::Instance()->getRenderer());
 
 	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("bullet");
@@ -15,7 +15,7 @@ Bullet::Bullet()
 	_reset();
 	setIsColliding(false);
 	setType(GameObjectType::BULLET);
-	TheSoundManager::Instance()->load("../Assets/audio/thunder.wav", "hit", SOUND_SFX);
+	TheSoundManager::Instance()->load("../Assets/audio/laser.wav", "fire", SOUND_SFX);
 }
 
 Bullet::~Bullet()
@@ -50,6 +50,7 @@ void Bullet::_move()
 {
 	glm::vec2 newPosition = getPosition() + getVelocity();
 	setPosition(newPosition);
+	//TheSoundManager::Instance()->playSound("fire", 0);
 }
 
 void Bullet::_checkBounds()
@@ -72,6 +73,8 @@ void Bullet::fire()
 {
 	setVelocity(glm::vec2(0, -5));
 	m_pisFiring= true;
+	if(getPosition() == spawnPoint)
+		TheSoundManager::Instance()->playSound("fire", 0);
 }
 
 void Bullet::respawn(Player* player)
