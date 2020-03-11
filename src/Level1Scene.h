@@ -4,7 +4,7 @@
 
 #include "Scene.h"
 #include "Player.h"
-#include "Mine.h"
+#include "Hazard.h"
 #include "Enemy.h"
 #include "Background.h"
 #include "Label.h"
@@ -36,7 +36,7 @@ class Level1Scene : public Scene
 	Background* m_pBackground;
 	Player* m_pPlayer;
 	Enemy* m_pEnemy;
-	Mine* m_pHazard;
+	Hazard* m_pHazard;
 	Bullet* m_pBullet;
 
 	// private data member

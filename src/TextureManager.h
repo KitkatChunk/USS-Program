@@ -8,7 +8,7 @@
 #include <unordered_map>
 #include <memory>
 
-#include <glm\vec2.hpp>
+#include <glm/vec2.hpp>
 
 // SDL Libraries
 #include<SDL.h>

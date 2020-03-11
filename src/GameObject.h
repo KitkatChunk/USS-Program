@@ -2,7 +2,7 @@
 #ifndef __GameObject__
 #define __GameObject__
 
-#include <glm\vec2.hpp>
+#include <glm/vec2.hpp>
 #include <string>
 
 #include "GameObjectType.h"

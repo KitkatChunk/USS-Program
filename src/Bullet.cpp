@@ -35,7 +35,7 @@ void Bullet::update()
 {
 	_move();
 	_checkBounds();
-	//setPosition(spawnPoint);
+	
 	if(!m_pisFiring)
 	{
 		setPosition(spawnPoint);
@@ -50,7 +50,6 @@ void Bullet::_move()
 {
 	glm::vec2 newPosition = getPosition() + getVelocity();
 	setPosition(newPosition);
-	//TheSoundManager::Instance()->playSound("fire", 0);
 }
 
 void Bullet::_checkBounds()
@@ -64,8 +63,6 @@ void Bullet::_checkBounds()
 
 void Bullet::_reset()
 {
-	//setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, 400.0f));
-	//setPosition(spawnPoint);
 	setVelocity(glm::vec2(0,0));
 }
 
@@ -73,6 +70,7 @@ void Bullet::fire()
 {
 	setVelocity(glm::vec2(0, -5));
 	m_pisFiring= true;
+	
 	if(getPosition() == spawnPoint)
 		TheSoundManager::Instance()->playSound("fire", 0);
 }

@@ -17,8 +17,9 @@ void Scene::removeAllChildren()
 {
 	for (auto child : m_displayList)
 	{
-		child = NULL;
+		child = nullptr;
 	}
+	
 	m_displayList.clear();
 	m_displayList.resize(0);
 	m_displayList.shrink_to_fit();

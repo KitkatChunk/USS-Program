@@ -37,7 +37,6 @@ void StartScene::clean()
 
 void StartScene::handleEvents()
 {
-	int wheel = 0;
 	SDL_Event event;
 	
 	while (SDL_PollEvent(&event))
@@ -72,10 +71,6 @@ void StartScene::handleEvents()
 				break;
 			}
 			break;
-			
-		case SDL_MOUSEWHEEL:
-			wheel = event.wheel.y;
-			break;
 
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)
@@ -83,9 +78,11 @@ void StartScene::handleEvents()
 			case SDLK_ESCAPE:
 				TheGame::Instance()->quit();
 				break;
+				
 			case SDLK_1:
 				TheGame::Instance()->changeSceneState(SceneState::LEVEL1_SCENE);
 				break;
+				
 			case SDLK_2:
 				TheGame::Instance()->changeSceneState(SceneState::END_SCENE);
 				break;

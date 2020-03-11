@@ -40,7 +40,6 @@ void Label::clean()
 
 void Label::setText(std::string newText)
 {
-
 	m_text = newText;
 
 	m_buildFontID();
@@ -86,4 +85,3 @@ void Label::m_buildFontID()
 	/*std::cout << "fontID: " << m_fontID << std::endl;
 	std::cout << "TextureMap Size: " << TheTextureManager::Instance()->getTextureMapSize() << std::endl;*/
 }
-

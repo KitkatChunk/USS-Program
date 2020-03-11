@@ -4,14 +4,14 @@
 #include <algorithm>
 #include <iomanip>
 
-Game* Game::s_pInstance = 0;
+Game* Game::s_pInstance = nullptr;
 
 // GAME FUNCTIONS - DO NOT REMOVE
 
 Game::Game() :
-	m_pWindow(NULL), m_pRenderer(NULL), m_currentFrame(0), m_currentScene(NULL), m_bRunning(true), m_currentSceneState(SceneState::NO_SCENE), m_frames(0)
+	m_pWindow(nullptr), m_pRenderer(nullptr), m_currentFrame(0), m_currentScene(nullptr), m_bRunning(true), m_currentSceneState(SceneState::NO_SCENE), m_frames(0)
 {
-	srand((unsigned)time(NULL));  // random seed
+	srand((unsigned)time(nullptr));  // random seed
 }
 
 Game::~Game()
@@ -46,6 +46,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 				std::cout << "renderer creation success" << std::endl;
 				SDL_SetRenderDrawColor(m_pRenderer, 255, 255, 255, 255);
 			}
+			
 			else
 			{
 				std::cout << "renderer init failure" << std::endl;
@@ -66,12 +67,14 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			//TheTextureManager::Instance()->load("../../Assets/textures/animate-alpha.png", "animate", m_pRenderer);
 			start();
 		}
+		
 		else 
 		{
 			std::cout << "window init failure" << std::endl;
 			return false; // window init fail
 		}
 	}
+	
 	else
 	{
 		std::cout << "SDL init failure" << std::endl;
@@ -134,30 +137,37 @@ void Game::changeSceneState(SceneState newState)
 			m_currentScene = new SplashScene();
 			std::cout << "splash scene activated" << std::endl;
 			break;
+			
 		case SceneState::START_SCENE:
 			m_currentScene = new StartScene();
 			std::cout << "start scene activated" << std::endl;
 			break;
+			
 		case SceneState::LEVEL1_SCENE:
 			m_currentScene = new Level1Scene();
 			std::cout << "1st play scene activated" << std::endl;
 			break;
+			
 		case SceneState::LEVEL2_SCENE:
 			m_currentScene = new Level2Scene();
 			std::cout << "2nd play scene activated" << std::endl;
 			break;
+			
 		case SceneState::LEVEL3_SCENE:
 			m_currentScene = new Level3Scene();
 			std::cout << "3rd play scene activated" << std::endl;
 			break;
+			
 		case SceneState::END_SCENE:
 			m_currentScene = new EndScene();
 			std::cout << "end scene activated" << std::endl;
 			break;
+			
 		case SceneState::WIN_SCENE:
 			m_currentScene = new WinScene();
 			std::cout << "win scene activated" << std::endl;
 			break;
+			
 		default:
 			std::cout << "default case activated" << std::endl;
 			break;
@@ -211,6 +221,7 @@ void Game::handleEvents()
 		case SDL_QUIT:
 			m_bRunning = false;
 			break;
+			
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)
 			{
@@ -219,6 +230,7 @@ void Game::handleEvents()
 				break;
 			}
 			break;
+			
 		default:
 			break;
 		}

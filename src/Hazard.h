@@ -1,13 +1,13 @@
 #pragma once
-#ifndef __MINE__
-#define __MINE__
+#ifndef __HAZARD__
+#define __HAZARD__
 #include "DisplayObject.h"
 
-class Mine : public DisplayObject
+class Hazard : public DisplayObject
 {
 	public:
-	Mine();
-	~Mine();
+	Hazard();
+	~Hazard();
 	
 	void draw() override;
 	void update() override;
@@ -18,4 +18,4 @@ class Mine : public DisplayObject
 	void _checkBounds();
 	void _reset();
 };
-#endif /* defined (__MINE__) */
+#endif /* defined (__HAZARD__) */

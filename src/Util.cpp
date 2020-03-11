@@ -102,6 +102,7 @@ glm::vec2 Util::limitMagnitude(glm::vec2 vector, float magnitude)
 		vector.y *= limiter;
 		return vector;
 	}
+	
 	else
 		return vector;
 }
@@ -197,7 +198,6 @@ glm::vec2 Util::inverse(glm::vec2 vec)
 	return dest;
 }
 
-
 //Normalizes vec2 and stores the result in a new vec2 object
 glm::vec2 Util::normalize(glm::vec2 vec)
 {
@@ -231,6 +231,7 @@ float Util::signedAngle(glm::vec2 from, glm::vec2 to)
 {
 	float unsigned_angle = Util::angle(from, to);
 	float sign = Util::sign(from.x * to.y - from.y * to.x);
+	
 	return unsigned_angle * sign;
 }
 
@@ -365,6 +366,7 @@ void Util::DrawCapsule(glm::vec2 position, int width, int height, glm::vec4 colo
 		DrawLine(glm::vec2(position.x - halfWidth + halfHeight, position.y - halfHeight), glm::vec2(position.x + halfWidth - halfHeight, position.y - halfHeight));
 		DrawLine(glm::vec2(position.x - halfWidth + halfHeight, position.y + halfHeight), glm::vec2(position.x + halfWidth - halfHeight, position.y + halfHeight));
 	}
+	
 	else if (width < height)
 	{
 		// Vertical Capsule
@@ -375,6 +377,7 @@ void Util::DrawCapsule(glm::vec2 position, int width, int height, glm::vec4 colo
 		DrawLine(glm::vec2(position.x - radius, position.y - halfHeight + radius), glm::vec2(position.x - halfWidth * 0.5f, position.y + halfHeight * 0.5f));
 		DrawLine(glm::vec2(position.x + radius, position.y - halfHeight + radius), glm::vec2(position.x + halfWidth * 0.5f, position.y + halfHeight * 0.5f));
 	}
+	
 	else
 	{
 		// Circle

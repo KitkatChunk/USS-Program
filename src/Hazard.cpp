@@ -1,7 +1,7 @@
-#include "Mine.h"
+#include "Hazard.h"
 #include "Game.h"
 
-Mine::Mine()
+Hazard::Hazard()
 {
 	TheTextureManager::Instance()->load("../Assets/textures/hazard.png",
 		"hazard", TheGame::Instance()->getRenderer());
@@ -13,7 +13,6 @@ Mine::Mine()
 	setVelocity(glm::vec2(0, 5));
 	
 	_reset();
-	//setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, 400.0f));
 	setIsColliding(false);
 	setType(GameObjectType::HAZARD);
 	//setVelocity(glm::vec2(0.0f, 0.0f));
@@ -21,11 +20,11 @@ Mine::Mine()
 	TheSoundManager::Instance()->load("../Assets/audio/explosion.mp3", "explosion", SOUND_SFX);
 }
 
-Mine::~Mine()
+Hazard::~Hazard()
 {
 }
 
-void Mine::draw()
+void Hazard::draw()
 {
 	int xComponent = getPosition().x;
 	int yComponent = getPosition().y;
@@ -34,30 +33,30 @@ void Mine::draw()
 		TheGame::Instance()->getRenderer(), 0, 255, true);
 }
 
-void Mine::update()
+void Hazard::update()
 {
 	_move();
 	_checkBounds();
 }
 
-void Mine::clean()
+void Hazard::clean()
 {
 }
 
-void Mine::_move()
+void Hazard::_move()
 {
 	glm::vec2 newPosition = getPosition() + getVelocity();
 	setPosition(newPosition);
 }
 
-void Mine::_checkBounds()
+void Hazard::_checkBounds()
 {
 	if (getPosition().y > 480 + getHeight()) {
 		_reset();
 	}
 }
 
-void Mine::_reset()
+void Hazard::_reset()
 {
 	setIsColliding(false);
 	int halfWidth = getWidth() * 0.5;

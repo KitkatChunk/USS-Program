@@ -18,7 +18,6 @@ Player::Player() :m_maxSpeed(10.0f), m_isMoving(false)
 
 	TheSoundManager::Instance()->load("../Assets/audio/space.ogg",
 		"bgm", sound_type::SOUND_MUSIC);
-
 	TheSoundManager::Instance()->playMusic("bgm", -1);
 }
 

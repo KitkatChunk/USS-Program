@@ -2,7 +2,8 @@
 #ifndef __STEERING_STATE__
 #define __STEERING_STATE__
 
-enum SteeringState {
+enum SteeringState
+{
 	NO_STATE = -1,
 	IDLE,
 	SEEK,

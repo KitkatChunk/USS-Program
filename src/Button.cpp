@@ -61,6 +61,7 @@ bool Button::m_mouseOver()
 		m_alpha = 178;
 		return true;
 	}
+	
 	else
 	{
 		m_alpha = 255;

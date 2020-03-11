@@ -4,7 +4,8 @@
 
 #include "DisplayObject.h"
 
-class Background : public DisplayObject {
+class Background : public DisplayObject
+{
 public:
 	// Constructor / Destructor
 	Background();
@@ -14,6 +15,7 @@ public:
 	void draw() override;
 	void update() override;
 	void clean() override;
+	
 private:
 	void _move();
 	void _checkBounds();

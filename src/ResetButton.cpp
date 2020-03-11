@@ -26,6 +26,7 @@ bool ResetButton::ButtonClick()
 		}
 		return true;
 	}
+	
 	else
 	{
 		m_isClicked = false;

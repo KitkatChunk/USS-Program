@@ -25,6 +25,7 @@ bool StartButton::ButtonClick()
 		}
 		return true;
 	}
+	
 	else
 	{
 		m_isClicked = false;

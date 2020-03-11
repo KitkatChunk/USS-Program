@@ -34,6 +34,9 @@
     <Filter Include="Game Objects\Object Headers">
       <UniqueIdentifier>{a8ab221a-ef6c-4e7f-bb03-d92bc9523f9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scenes\Scene Headers">
+      <UniqueIdentifier>{6cda5405-d44f-4dd9-9955-3f86924a9e46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -102,9 +105,6 @@
     <ClCompile Include="..\src\Player.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Mine.cpp">
-      <Filter>Game Objects</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Enemy.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
@@ -133,6 +133,9 @@
       <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Logo.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Hazard.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
   </ItemGroup>
@@ -173,12 +176,6 @@
     <ClInclude Include="..\src\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\StartScene.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EndScene.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\DisplayObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -206,9 +203,6 @@
     <ClInclude Include="..\src\SceneState.h">
       <Filter>Enums</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Level1Scene.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Move.h">
       <Filter>Enums</Filter>
     </ClInclude>
@@ -222,9 +216,6 @@
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Label.h">
-      <Filter>Game Objects\Object Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Mine.h">
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Player.h">
@@ -242,19 +233,31 @@
     <ClInclude Include="..\src\QuitButton.h">
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Logo.h">
+      <Filter>Game Objects\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EndScene.h">
+      <Filter>Scenes\Scene Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Level1Scene.h">
+      <Filter>Scenes\Scene Headers</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\Level2Scene.h">
-      <Filter>Scenes</Filter>
+      <Filter>Scenes\Scene Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Level3Scene.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\WinScene.h">
-      <Filter>Scenes</Filter>
+      <Filter>Scenes\Scene Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\SplashScene.h">
-      <Filter>Scenes</Filter>
+      <Filter>Scenes\Scene Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Logo.h">
+    <ClInclude Include="..\src\StartScene.h">
+      <Filter>Scenes\Scene Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WinScene.h">
+      <Filter>Scenes\Scene Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Hazard.h">
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -13,12 +13,12 @@
 //#include <fstream>
 
 // 3rd Party Libraries
-#include <GLEW\glew.h>
+#include <GLEW/glew.h>
 //#include <GLUT/freeglut.h>
 //#include <IL/il.h> // for ilInit()
 //#include "IL\ilu.h"
-#include <glm\vec3.hpp>
-#include <glm\gtx\color_space.hpp>
+#include <glm/vec3.hpp>
+#include <glm/gtx/color_space.hpp>
 
 #include "TextureManager.h"
 #include "Game.h"
@@ -36,7 +36,7 @@ int main(int argc, char * args[])
 	AllocConsole();
 	freopen("CON", "w", stdout);
 
-	TheGame::Instance()->init("Mail Pilot", 100, 100, Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT, false);
+	TheGame::Instance()->init("USS Program", 100, 100, Config::SCREEN_WIDTH, Config::SCREEN_HEIGHT, false);
 
 	// The main Game Loop
 	while (TheGame::Instance()->running())
@@ -50,6 +50,7 @@ int main(int argc, char * args[])
 
 		// Frame Limiter
 		frameTime = SDL_GetTicks() - frameStart;
+		
 		if (frameTime< DELAY_TIME)
 		{
 			SDL_Delay((int)(DELAY_TIME - frameTime));

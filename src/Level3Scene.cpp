@@ -33,10 +33,6 @@ void Level3Scene::update()
 
 	m_pHealthLabel->setText("Health: " + std::to_string(_health));
 	m_pScoreLabel->setText("Score: " + std::to_string(_score));
-	//m_pPlane->setVelocity(m_pPlane->getVelocity() * 0.97f);
-	
-	// plane moving with mouse motion
-	//m_pPlane->setPosition(glm::vec2(m_mousePosition.x, m_pPlane->getPosition().y));
 
 	if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard))
 	{
@@ -62,8 +58,8 @@ void Level3Scene::clean()
 void Level3Scene::handleEvents()
 {
 	int wheel = 0;
-
 	SDL_Event event;
+	
 	while(SDL_PollEvent(&event))
 	{
 		switch (event.type)
@@ -71,6 +67,7 @@ void Level3Scene::handleEvents()
 		case SDL_QUIT:
 			TheGame::Instance()->quit();
 			break;
+			
 		case SDL_MOUSEMOTION:
 			m_mousePosition.x = event.motion.x;
 			m_mousePosition.y = event.motion.y;
@@ -102,13 +99,21 @@ void Level3Scene::handleEvents()
 				case SDLK_ESCAPE:
 					TheGame::Instance()->quit();
 					break;
-				case SDLK_1:
+				
+				case SDLK_9:
 					TheGame::Instance()->changeSceneState(SceneState::START_SCENE);
 					break;
-				case SDLK_2:
+				case SDLK_0:
 					TheGame::Instance()->changeSceneState(SceneState::END_SCENE);
 					break;
-				case SDLK_3:
+				case SDLK_8:
+					TheGame::Instance()->changeSceneState(SceneState::WIN_SCENE);
+					break;
+				
+				case SDLK_1:
+					TheGame::Instance()->changeSceneState(SceneState::LEVEL1_SCENE);
+					break;
+				case SDLK_2:
 					TheGame::Instance()->changeSceneState(SceneState::LEVEL2_SCENE);
 					break;
 			
@@ -119,6 +124,7 @@ void Level3Scene::handleEvents()
 				case SDLK_d:
 					m_pPlayer->move(RIGHT);
 					break;
+				
 				case SDLK_LEFT:
 					m_pPlayer->move(LEFT);
 					break;
@@ -127,8 +133,8 @@ void Level3Scene::handleEvents()
 					break;
 
 				case SDLK_SPACE:
-				m_pBullet->fire();
-				break;
+					m_pBullet->fire();
+					break;
 			}
 			break;
 			
@@ -146,12 +152,14 @@ void Level3Scene::handleEvents()
 				case SDLK_d:
 					m_pPlayer->setIsMoving(false);
 					break;
+				
 				case SDLK_LEFT:
 					m_pPlayer->setIsMoving(false);
 					break;
 				case SDLK_RIGHT:
 					m_pPlayer->setIsMoving(false);
 					break;
+				
 				case SDLK_SPACE:
 				break;
 			}
@@ -177,7 +185,7 @@ void Level3Scene::start()
 	addChild(m_pScoreLabel);
 	
 	m_pPlayer = new Player(); // instantiates Player
-	//addChild(m_pPlayer);
+	addChild(m_pPlayer);
 
 	m_pBullet = new Bullet();
 	addChild(m_pBullet);
@@ -185,7 +193,7 @@ void Level3Scene::start()
 	m_pEnemy = new Enemy(); // instantiates Enemy
 	addChild(m_pEnemy);
 
-	m_pHazard = new Mine(); // instantiates Island
+	m_pHazard = new Hazard(); // instantiates Island
 	addChild(m_pHazard);
 
 	m_pBackground = new Background(); //instantiates background

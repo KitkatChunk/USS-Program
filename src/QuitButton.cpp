@@ -25,6 +25,7 @@ bool QuitButton::ButtonClick()
 		}
 		return true;
 	}
+	
 	else
 	{
 		m_isClicked = false;

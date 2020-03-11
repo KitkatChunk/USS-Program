@@ -2,7 +2,8 @@
 #ifndef __GAME_OBJECT_TYPE__
 #define __GAME_OBJECT_TYPE__
 
-enum GameObjectType {
+enum GameObjectType
+{
 	NONE = -1,
 	LOGO,
 	HAZARD,

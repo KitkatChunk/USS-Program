@@ -53,8 +53,5 @@ void Background::_checkBounds()
 
 void Background::_reset()
 {
-	//For ocean
-	//setPosition(glm::vec2(0, -960));
-
-	setPosition(glm::vec2(0, -200));
+	setPosition(glm::vec2(0, -500));
 }

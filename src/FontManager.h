@@ -7,7 +7,7 @@
 #include <string>
 #include <unordered_map>
 
-#include <glm\vec2.hpp>
+#include <glm/vec2.hpp>
 
 // SDL Libraries
 #include<SDL.h>
@@ -22,7 +22,7 @@ class FontManager
 	public:
 	static FontManager* Instance()
 	{
-		if (s_pInstance == 0)
+		if (s_pInstance == nullptr)
 		{
 			s_pInstance = new FontManager();
 			return s_pInstance;

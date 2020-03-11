@@ -42,27 +42,6 @@ void SplashScene::handleEvents()
 		case SDL_QUIT:
 			TheGame::Instance()->quit();
 			break;
-
-			case SDL_MOUSEMOTION:
-			m_mousePosition.x = event.motion.x;
-			m_mousePosition.y = event.motion.y;
-			break;
-
-		case SDL_MOUSEBUTTONDOWN:
-			switch (event.button.button)
-			{
-			case SDL_BUTTON_LEFT:
-				break;
-			}
-			break;
-			
-		case SDL_MOUSEBUTTONUP:
-			switch (event.button.button)
-			{
-			case SDL_BUTTON_LEFT:
-				break;
-			}
-			break;
 			
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym)

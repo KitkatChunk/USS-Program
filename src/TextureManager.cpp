@@ -1,6 +1,6 @@
 #include "TextureManager.h"
 
-TextureManager* TextureManager::s_pInstance = 0;
+TextureManager* TextureManager::s_pInstance = nullptr;
 
 TextureManager::TextureManager()
 {
@@ -311,7 +311,7 @@ void TextureManager::clean()
 	while (it != m_textureMap.end())
 	{
 		SDL_DestroyTexture(it->second);
-		it->second = NULL;
+		it->second = nullptr;
 		m_textureMap.erase(it++);
 	}
 	m_textureMap.clear();

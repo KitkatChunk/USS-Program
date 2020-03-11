@@ -1,12 +1,12 @@
 #include "FontManager.h"
 #include "Game.h"
 
-FontManager* FontManager::s_pInstance = 0;
+FontManager* FontManager::s_pInstance = nullptr;
 
 bool FontManager::load(std::string fileName, std::string id, int size, int style)
 {
 	TTF_Font* font = TTF_OpenFont(fileName.c_str(), size);
-	if (font != 0)
+	if (font != nullptr)
 	{
 		TTF_SetFontStyle(font, style);
 		m_fontMap[id] = font;
@@ -20,7 +20,7 @@ bool FontManager::textToTexture(std::string text, std::string fontID, std::strin
 	//Render text surface
 	SDL_Surface* textSurface = TTF_RenderText_Solid(m_fontMap[fontID] , text.c_str(), colour);
 	
-	if (textSurface == NULL)
+	if (textSurface == nullptr)
 	{
 		printf("Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError());
 		return false;
@@ -31,7 +31,7 @@ bool FontManager::textToTexture(std::string text, std::string fontID, std::strin
 		//Create texture from surface pixels
 		TextureManager::Instance()->addTexture(textureID, SDL_CreateTextureFromSurface(TheGame::Instance()->getRenderer(), textSurface));
 		
-		if (TextureManager::Instance()->getTexture(textureID) == NULL)
+		if (TextureManager::Instance()->getTexture(textureID) == nullptr)
 		{
 			printf("Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError());
 			return false;
@@ -59,7 +59,7 @@ void FontManager::clean()
 	while (it != m_fontMap.end())
 	{
 		TTF_CloseFont(it->second);
-		it->second = NULL;
+		it->second = nullptr;
 		m_fontMap.erase(it++);
 	}
 	m_fontMap.clear();

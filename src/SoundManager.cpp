@@ -17,7 +17,7 @@ bool SoundManager::load(std::string fileName, std::string id, sound_type type)
 	if (type == SOUND_MUSIC)
 	{
 		Mix_Music* pMusic = Mix_LoadMUS(fileName.c_str());
-		if (pMusic == 0)
+		if (pMusic == nullptr)
 		{
 			std::cout << "Could not load music: ERROR - " << Mix_GetError() << std::endl;
 			return false;

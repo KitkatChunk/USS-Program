@@ -2,8 +2,8 @@
 #ifndef __Util__
 #define __Util__
 
-#include "GLM/vec2.hpp"
-#include "GLM/vec4.hpp"
+#include "glm/vec2.hpp"
+#include "glm/vec4.hpp"
 
 #include "ShapeType.h"
 
