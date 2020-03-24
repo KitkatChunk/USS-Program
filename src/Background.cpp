@@ -3,7 +3,7 @@
 
 Background::Background()
 {
-	TheTextureManager::Instance()->load("../Assets/textures/background.png",
+	TheTextureManager::Instance()->load("../Assets/textures/space.png",
 		"background", TheGame::Instance()->getRenderer());
 
 	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("background");
@@ -35,6 +35,15 @@ void Background::update()
 
 void Background::clean()
 {
+}
+
+void Background::setBackground(std::string file)
+{
+	std::string path= "../Assets/textures/"+file;
+	std::cout<<path<< std::endl;
+	SDL_Texture* pTexture = SDL_CreateTextureFromSurface(TheGame::Instance()->getRenderer(), IMG_Load(path.c_str()));
+	TheTextureManager::Instance()->removeTexture("background");
+	TheTextureManager::Instance()->addTexture("background",pTexture);
 }
 
 void Background::_move()

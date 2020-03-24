@@ -198,6 +198,7 @@ void Level3Scene::start()
 
 	m_pBackground = new Background(); //instantiates background
 	addChild(m_pBackground);
+	//m_pBackground->setBackground("space.png");
 }
 
 void Level3Scene::damage()

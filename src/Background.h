@@ -15,6 +15,7 @@ public:
 	void draw() override;
 	void update() override;
 	void clean() override;
+	void setBackground(std::string file);
 	
 private:
 	void _move();
