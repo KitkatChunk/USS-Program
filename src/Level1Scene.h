@@ -31,13 +31,13 @@ class Level1Scene : public Scene
 
 	private:
 	// game objects
-	Label* m_pHealthLabel;
-	Label* m_pScoreLabel;
 	Background* m_pBackground;
 	Player* m_pPlayer;
 	Enemy* m_pEnemy;
 	Hazard* m_pHazard;
 	Bullet* m_pBullet;
+	Label* m_pHealthLabel;
+	Label* m_pScoreLabel;
 
 	// private data member
 	glm::vec2 m_mousePosition;

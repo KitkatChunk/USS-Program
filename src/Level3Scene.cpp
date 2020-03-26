@@ -43,7 +43,7 @@ void Level3Scene::update()
 	{
 		_score= _score + 100;
 
-		if(_score == 500)
+		if(_score == 1500)
 		{
 			TheGame::Instance()->changeSceneState(SceneState::WIN_SCENE);
 		}
@@ -173,7 +173,7 @@ void Level3Scene::handleEvents()
 
 void Level3Scene::start()
 {
-	_health = 10;
+	_health = 5;
 	
 	SDL_Color yellow = { 255, 255, 0, 255 };
 	m_pHealthLabel = new Label("Health: ", "Dock51", 26, yellow, 

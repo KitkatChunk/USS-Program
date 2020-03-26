@@ -138,6 +138,9 @@
     <ClCompile Include="..\src\Hazard.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ScoreBoardManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -259,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="..\src\Hazard.h">
       <Filter>Game Objects\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ScoreBoardManager.h">
+      <Filter>Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

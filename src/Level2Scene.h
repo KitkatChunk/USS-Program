@@ -27,7 +27,7 @@ class Level2Scene : public Scene
 	glm::vec2 getMousePosition();
 
 	int _health;
-	int _score;
+	int _score = 500;
 
 	private:
 	// game objects

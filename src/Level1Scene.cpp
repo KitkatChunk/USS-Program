@@ -2,6 +2,8 @@
 #include "Game.h"
 #include <iostream>
 
+#include "ScoreBoardManager.h"
+
 Level1Scene::Level1Scene()
 {
 	start();
@@ -20,6 +22,7 @@ void Level1Scene::draw()
 	m_pPlayer->draw();
 	m_pHealthLabel->draw();
 	m_pScoreLabel->draw();
+
 }
 
 void Level1Scene::update()
@@ -173,7 +176,7 @@ void Level1Scene::handleEvents()
 
 void Level1Scene::start()
 {
-	_health = 10;
+	_health = 5;
 	
 	SDL_Color yellow = { 255, 255, 0, 255 };
 	m_pHealthLabel = new Label("Health: ", "Dock51", 26, yellow, 
@@ -183,7 +186,7 @@ void Level1Scene::start()
 	m_pScoreLabel = new Label("Score", "Dock51", 26, yellow, 
 		glm::vec2(Config::SCREEN_WIDTH * 0.6f, Config::SCREEN_HEIGHT * 0.95f));
 	addChild(m_pScoreLabel);
-	
+
 	m_pPlayer = new Player(); // instantiates Player
 	addChild(m_pPlayer);
 
@@ -199,6 +202,8 @@ void Level1Scene::start()
 	m_pBackground = new Background(); //instantiates background
 	addChild(m_pBackground);
 	//m_pBackground->setBackground("space.png");
+
+
 }
 
 void Level1Scene::damage()

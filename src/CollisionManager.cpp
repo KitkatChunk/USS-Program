@@ -2,6 +2,9 @@
 #include "Util.h"
 #include <algorithm>
 
+#include "Config.h"
+#include "ScoreBoardManager.h"
+
 int CollisionManager::squaredDistance(glm::vec2 P1, glm::vec2 P2)
 {
 	int diffOfXs = P2.x - P1.x;
@@ -28,11 +31,13 @@ bool CollisionManager::squaredRadiusCheck(GameObject* object1, GameObject* objec
 			case HAZARD:
 				std::cout << "Collision with HAZARD!" << std::endl;
 				TheSoundManager::Instance()->playSound("explosion", 0);
+				ScoreBoardManager::Instance()->setLives(ScoreBoardManager::Instance()->getLives() - 1);
 				break;
 				
 			case ENEMY:
 				std::cout << "Collision with ENEMY!" << std::endl;
 				TheSoundManager::Instance()->playSound("hit", 0);
+				ScoreBoardManager::Instance()->setLives(ScoreBoardManager::Instance()->getScore() + 100);
 				break;
 				
 			default:
