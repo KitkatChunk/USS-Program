@@ -15,9 +15,10 @@ class Bullet : public DisplayObject
 	void clean() override;
 	void fire();
 	void respawn(Player* player);
+	bool m_pisFiring;
 
 	private:
-	bool m_pisFiring;
+	//bool m_pisFiring;
 	glm::vec2 spawnPoint;
 	void _move();
 	void _checkBounds();
