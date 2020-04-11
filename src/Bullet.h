@@ -15,7 +15,7 @@ class Bullet : public DisplayObject
 	void clean() override;
 	void fire();
 	void respawn(Player* player);
-	bool m_pisFiring;
+	bool m_pisFiring = false;
 
 	private:
 	//bool m_pisFiring;

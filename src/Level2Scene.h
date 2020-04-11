@@ -9,6 +9,7 @@
 #include "Background.h"
 #include "Label.h"
 #include "Bullet.h"
+#include "Config.h"
 
 class Level2Scene : public Scene
 {
@@ -30,21 +31,15 @@ class Level2Scene : public Scene
 	int _score = 1000;
 
 	private:
-	int shotCount1;
-	int shotCount2;
-	int shotCount3;
-	int shotCount4;
-	int shotCount5;
+	int shotCount;
 	
 	// game objects
 	Label* m_pHealthLabel;
 	Label* m_pScoreLabel;
 
-	Bullet* m_pBullet1;
-	Bullet* m_pBullet2;
-	Bullet* m_pBullet3;
-	Bullet* m_pBullet4;
-	Bullet* m_pBullet5;
+	int m_bulletNum = Config::NUM_OF_BULLETS;
+	std::vector<Bullet*> m_pBullets;
+	void m_buildBullets();
 	
 	Background* m_pBackground;
 	Player* m_pPlayer;

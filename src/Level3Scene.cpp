@@ -15,11 +15,12 @@ void Level3Scene::draw()
 {
 	m_pBackground->draw();
 	m_pHazard->draw();
-	m_pBullet1->draw();
-	m_pBullet2->draw();
-	m_pBullet3->draw();
-	m_pBullet4->draw();
-	m_pBullet5->draw();
+	
+	for (auto bullet : m_pBullets)
+	{
+		bullet->draw();
+	}
+	
 	m_pEnemy->draw();
 	m_pPlayer->draw();
 	m_pHealthLabel->draw();
@@ -28,24 +29,22 @@ void Level3Scene::draw()
 
 void Level3Scene::update()
 {
-	shotCount1++;
-	shotCount2++;
-	shotCount3++;
-	shotCount4++;
-	shotCount5++;
+	for (auto bullet : m_pBullets)
+	{
+		bullet->respawn(m_pPlayer);
+		bullet->update();
+		
+		if(CollisionManager::squaredRadiusCheck(bullet, m_pEnemy))
+		{
+			_score= _score + 100;
+			bullet->m_pisFiring = false;
+		}
+	}
+	
+	shotCount++;
 	
 	m_pPlayer->update();
 	m_pEnemy->update();
-	m_pBullet1->respawn(m_pPlayer);
-	m_pBullet1->update();
-	m_pBullet2->respawn(m_pPlayer);
-	m_pBullet2->update();
-	m_pBullet3->respawn(m_pPlayer);
-	m_pBullet3->update();
-	m_pBullet4->respawn(m_pPlayer);
-	m_pBullet4->update();
-	m_pBullet5->respawn(m_pPlayer);
-	m_pBullet5->update();
 	m_pBackground->update();
 	m_pHazard->update();
 
@@ -55,36 +54,6 @@ void Level3Scene::update()
 	if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard))
 	{
 		damage();
-	}
-
-	if(CollisionManager::squaredRadiusCheck(m_pBullet1, m_pEnemy))
-	{
-		_score= _score + 100;
-		m_pBullet1->m_pisFiring = false;
-	}
-
-	if(CollisionManager::squaredRadiusCheck(m_pBullet2, m_pEnemy))
-	{
-		_score= _score + 100;
-		m_pBullet2->m_pisFiring = false;
-	}
-
-	if(CollisionManager::squaredRadiusCheck(m_pBullet3, m_pEnemy))
-	{
-		_score= _score + 100;
-		m_pBullet3->m_pisFiring = false;
-	}
-
-	if(CollisionManager::squaredRadiusCheck(m_pBullet4, m_pEnemy))
-	{
-		_score= _score + 100;
-		m_pBullet4->m_pisFiring = false;
-	}
-
-	if(CollisionManager::squaredRadiusCheck(m_pBullet5, m_pEnemy))
-	{
-		_score= _score + 100;
-		m_pBullet5->m_pisFiring = false;
 	}
 
 	if(_score >= 3000)
@@ -176,33 +145,34 @@ void Level3Scene::handleEvents()
 					break;
 
 				case SDLK_SPACE:
-					if(shotCount1 >= 50)
+					if(shotCount > 0 && m_pBullets[0]->m_pisFiring == false)
 					{
-						m_pBullet1->fire();
+						m_pBullets[0]->fire();
+						shotCount = 0;
 					}
 					
-					if(shotCount2 >= 70 && m_pBullet1->getPosition() != m_pPlayer->getPosition())
+					if(shotCount > 1 && m_pBullets[1]->m_pisFiring == false)
 					{
-						m_pBullet2->fire();
-						shotCount2 = 0;
+						m_pBullets[1]->fire();
+						shotCount = 0;
 					}
 
-					if(shotCount3 >= 90 && m_pBullet2->getPosition() != m_pPlayer->getPosition())
+					if(shotCount > 1 && m_pBullets[2]->m_pisFiring == false)
 					{
-						m_pBullet3->fire();
-						shotCount3 = 0;
+						m_pBullets[2]->fire();
+						shotCount = 0;
 					}
 
-					if(shotCount4 >= 110 && m_pBullet3->getPosition() != m_pPlayer->getPosition())
+					if(shotCount > 1 && m_pBullets[3]->m_pisFiring == false)
 					{
-						m_pBullet4->fire();
-						shotCount4 = 0;
+						m_pBullets[3]->fire();
+						shotCount = 0;
 					}
 
-					if(shotCount5 >= 130 && m_pBullet4->getPosition() != m_pPlayer->getPosition())
+					if(shotCount > 1 && m_pBullets[4]->m_pisFiring == false)
 					{
-						m_pBullet5->fire();
-						shotCount5 = 0;
+						m_pBullets[4]->fire();
+						shotCount = 0;
 					}
 					break;
 			}
@@ -243,11 +213,6 @@ void Level3Scene::handleEvents()
 
 void Level3Scene::start()
 {
-	shotCount1 = 50;
-	shotCount2 = 60;
-	shotCount3 = 75;
-	shotCount4 = 95;
-	shotCount5 = 110;
 	_health = 5;
 	
 	SDL_Color yellow = { 255, 255, 0, 255 };
@@ -262,16 +227,7 @@ void Level3Scene::start()
 	m_pPlayer = new Player(); // instantiates Player
 	addChild(m_pPlayer);
 
-	m_pBullet1 = new Bullet();
-	addChild(m_pBullet1);
-	m_pBullet2 = new Bullet();
-	addChild(m_pBullet2);
-	m_pBullet3 = new Bullet();
-	addChild(m_pBullet3);
-	m_pBullet4 = new Bullet();
-	addChild(m_pBullet4);
-	m_pBullet5 = new Bullet();
-	addChild(m_pBullet5);
+	m_buildBullets();
 
 	m_pEnemy = new Enemy(); // instantiates Enemy
 	addChild(m_pEnemy);
@@ -297,4 +253,14 @@ void Level3Scene::damage()
 glm::vec2 Level3Scene::getMousePosition()
 {
 	return m_mousePosition;
+}
+
+void Level3Scene::m_buildBullets()
+{
+	for (auto i = 0; i < m_bulletNum; ++i)
+	{
+		auto bullet = new Bullet();
+		m_pBullets.push_back(bullet);
+		addChild(bullet);
+	}
 }

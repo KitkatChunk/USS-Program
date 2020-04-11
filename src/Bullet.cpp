@@ -54,7 +54,7 @@ void Bullet::_move()
 
 void Bullet::_checkBounds()
 {
-	if (getPosition().y <= 0) 
+	if (getPosition().y < 0) 
 	{
 		m_pisFiring=false;
 		_reset();
@@ -68,8 +68,8 @@ void Bullet::_reset()
 
 void Bullet::fire()
 {
-	setVelocity(glm::vec2(0, -5));
 	m_pisFiring= true;
+	setVelocity(glm::vec2(0, -5));
 	
 	if(getPosition() == spawnPoint)
 		TheSoundManager::Instance()->playSound("fire", 0);

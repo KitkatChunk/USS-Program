@@ -11,6 +11,7 @@ class Config
 	static const int COL_NUM = 20;
 	static const int TILE_SIZE = 40;
 	static const int TILE_COST = 1;
+	static const int NUM_OF_BULLETS = 5;
 	static const int SCORE = 0;
 	static const int LIVES = 5;
 };
