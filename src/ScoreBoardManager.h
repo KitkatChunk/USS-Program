@@ -17,7 +17,7 @@ public:
 	}
 
 	void Start();
-	void Draw();
+	void Draw() const;
 
 	int getScore();
 	void setScore(int newScore);
@@ -29,11 +29,11 @@ private:
 	ScoreBoardManager();
 	~ScoreBoardManager();
 
-	int m_score;
-	int m_lives;
+	int m_score{};
+	int m_lives{};
 
-	Label* m_pHealthLabel;
-	Label* m_pScoreLabel;
+	Label* m_pHealthLabel{};
+	Label* m_pScoreLabel{};
 	
 	static ScoreBoardManager* m_pInstance;
 };

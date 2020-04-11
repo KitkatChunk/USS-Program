@@ -37,7 +37,7 @@ bool CollisionManager::squaredRadiusCheck(GameObject* object1, GameObject* objec
 			case ENEMY:
 				std::cout << "Collision with ENEMY!" << std::endl;
 				TheSoundManager::Instance()->playSound("hit", 0);
-				ScoreBoardManager::Instance()->setLives(ScoreBoardManager::Instance()->getScore() + 100);
+				//ScoreBoardManager::Instance()->setLives(ScoreBoardManager::Instance()->getScore() + 100);
 				break;
 				
 			default:

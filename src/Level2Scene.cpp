@@ -1,6 +1,7 @@
 #include "Level2Scene.h"
 #include "Game.h"
 #include <iostream>
+#include "ScoreBoardManager.h"
 
 Level2Scene::Level2Scene()
 {
@@ -23,8 +24,7 @@ void Level2Scene::draw()
 	
 	m_pEnemy->draw();
 	m_pPlayer->draw();
-	m_pHealthLabel->draw();
-	m_pScoreLabel->draw();
+	ScoreBoardManager::Instance()->Draw();
 }
 
 void Level2Scene::update()
@@ -36,7 +36,7 @@ void Level2Scene::update()
 		
 		if(CollisionManager::squaredRadiusCheck(bullet, m_pEnemy))
 		{
-			_score= _score + 100;
+			ScoreBoardManager::Instance()->setScore(ScoreBoardManager::Instance()->getScore() + 100);
 			bullet->m_pisFiring = false;
 		}
 	}
@@ -48,15 +48,13 @@ void Level2Scene::update()
 	m_pBackground->update();
 	m_pHazard->update();
 
-	m_pHealthLabel->setText("Health: " + std::to_string(_health));
-	m_pScoreLabel->setText("Score: " + std::to_string(_score));
-
-	if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard))
+	/*if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard))
 	{
 		damage();
-	}
+	}*/
+	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard);
 
-	if(_score >= 2000)
+	if(ScoreBoardManager::Instance()->getScore() >= 2000)
 	{
 		TheGame::Instance()->changeSceneState(SceneState::LEVEL3_SCENE);
 	}
@@ -211,17 +209,6 @@ void Level2Scene::handleEvents()
 
 void Level2Scene::start()
 {
-	_health = 5;
-	
-	SDL_Color yellow = { 255, 255, 0, 255 };
-	m_pHealthLabel = new Label("Health: ", "Dock51", 26, yellow, 
-		glm::vec2(Config::SCREEN_WIDTH * 0.1f, Config::SCREEN_HEIGHT * 0.95f));
-	addChild(m_pHealthLabel);
-
-	m_pScoreLabel = new Label("Score", "Dock51", 26, yellow, 
-		glm::vec2(Config::SCREEN_WIDTH * 0.6f, Config::SCREEN_HEIGHT * 0.95f));
-	addChild(m_pScoreLabel);
-	
 	m_pPlayer = new Player(); // instantiates Player
 	addChild(m_pPlayer);
 
@@ -235,18 +222,22 @@ void Level2Scene::start()
 
 	m_pBackground = new Background(); //instantiates background
 	addChild(m_pBackground);
+	
+	ScoreBoardManager::Instance()->Start();
+	ScoreBoardManager::Instance()->setScore(ScoreBoardManager::Instance()->getScore());
+	ScoreBoardManager::Instance()->setLives(ScoreBoardManager::Instance()->getLives());
 	//m_pBackground->setBackground("space.png");
 }
 
-void Level2Scene::damage()
-{
-	_health--;
-	
-	if(_health <= 0)
-	{
-		Game::Instance()->changeSceneState(END_SCENE);
-	}
-}
+//void Level2Scene::damage()
+//{
+//	ScoreBoardManager::Instance()->setLives(ScoreBoardManager::Instance()->getLives() - 1);
+//	
+//	if(ScoreBoardManager::Instance()->getLives() <= 0)
+//	{
+//		Game::Instance()->changeSceneState(END_SCENE);
+//	}
+//}
 
 glm::vec2 Level2Scene::getMousePosition()
 {

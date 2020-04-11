@@ -27,15 +27,8 @@ class Level3Scene : public Scene
 	// getters
 	glm::vec2 getMousePosition();
 
-	int _health;
-	int _score = 2000;
-
 	private:
 	int shotCount;
-	
-	// game objects
-	Label* m_pHealthLabel;
-	Label* m_pScoreLabel;
 
 	int m_bulletNum = Config::NUM_OF_BULLETS;
 	std::vector<Bullet*> m_pBullets;
