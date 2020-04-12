@@ -141,12 +141,24 @@
     <ClCompile Include="..\src\ScoreBoardManager.cpp">
       <Filter>Managers</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="..\src\L2Enemy.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Shot.cpp">
       <Filter>Game Objects</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="..\src\ExplosionManager.cpp">
+      <Filter>Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Explosion.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SpriteSheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -272,11 +284,29 @@
     <ClInclude Include="..\src\ScoreBoardManager.h">
       <Filter>Managers</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="..\src\L2Enemy.h">
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Shot.h">
       <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
+=======
+    <ClInclude Include="..\src\ExplosionManager.h">
+      <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Explosion.h">
+      <Filter>Game Objects\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SpriteSheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+>>>>>>> Stashed changes
   </ItemGroup>
 </Project>

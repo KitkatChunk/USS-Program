@@ -2,6 +2,7 @@
 #include "Game.h"
 #include <iostream>
 #include "ScoreBoardManager.h"
+//#include "ExplosionManager.h"
 
 Level1Scene::Level1Scene()
 {
@@ -14,6 +15,9 @@ Level1Scene::~Level1Scene()
 
 void Level1Scene::draw()
 {
+
+	// ExplosionManager::Instance()->draw();
+
 	m_pBackground->draw();
 	m_pHazard->draw();
 	
@@ -29,10 +33,19 @@ void Level1Scene::draw()
 	
 	m_pPlayer->draw();
 	ScoreBoardManager::Instance()->Draw();
+
+//	TheTextureManager::Instance()->load("../Assets/textures/M484ExplosionSet1.png",
+	//	"explosion", TheGame::Instance()->getRenderer);
+
 }
 
 void Level1Scene::update()
 {
+
+	
+	// ExplosionManager::Instance()->update();
+
+
 	for (auto bullet : m_pBullets)
 	{
 		bullet->respawn(m_pPlayer);
@@ -45,6 +58,15 @@ void Level1Scene::update()
 				ScoreBoardManager::Instance()->setScore(ScoreBoardManager::Instance()->getScore() + 100);
 				enemy->_reset();
 				bullet->m_pisFiring = false;
+				
+				// auto explosion = ExplosionManager::Instance()->getExplosion();
+				// explosion->setPosition(m_mousePosition);
+
+			/*	TheTextureManager::Instance()->drawFrame("explosion", enemy->getPosition().x, enemy->getPosition().y,34.4, 30, m_currentRow,
+					m_currentFrame, 7, 1, 2.0f,
+					TheGame::Instance()->getRenderer(), 0, 255, true);*/
+
+
 			}
 		}
 	}

@@ -30,10 +30,15 @@ class Level1Scene : public Scene
 	private:
 	int shotCount;
 
+	//animation
+	int m_currentFrame;
+	int m_currentRow;
+
 	// game objects
 	Background* m_pBackground;
 	Player* m_pPlayer;
 	Hazard* m_pHazard;
+	
 	
 	int m_enemyNum = Config::NUM_OF_ENEMIES;
 	std::vector<Enemy*> m_pEnemies;
@@ -42,6 +47,7 @@ class Level1Scene : public Scene
 	int m_bulletNum = Config::NUM_OF_BULLETS;
 	std::vector<Bullet*> m_pBullets;
 	void m_buildBullets();
+
 
 	// private data member
 	glm::vec2 m_mousePosition;
