@@ -16,11 +16,8 @@ class Enemy : public DisplayObject
 	void clean() override;
 	void _reset();
 
-
 	private:
 	void _move();
 	void _checkBounds();
-	int m_currentFrame;
-	int m_currentRow;
 };
 #endif /* defined (__ENEMY__)*/
