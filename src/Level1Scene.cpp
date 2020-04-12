@@ -21,8 +21,13 @@ void Level1Scene::draw()
 	{
 		bullet->draw();
 	}
+
+	for(auto enemy : m_pEnemies)
+	{
+		enemy->draw();
+	}
 	
-	m_pEnemy->draw();
+	//m_pEnemy->draw();
 	m_pPlayer->draw();
 	ScoreBoardManager::Instance()->Draw();
 }
@@ -33,26 +38,39 @@ void Level1Scene::update()
 	{
 		bullet->respawn(m_pPlayer);
 		bullet->update();
-		
-		if(CollisionManager::squaredRadiusCheck(bullet, m_pEnemy))
+
+		for(auto enemy : m_pEnemies)
 		{
-			ScoreBoardManager::Instance()->setScore(ScoreBoardManager::Instance()->getScore() + 100);
-			bullet->m_pisFiring = false;
+			if(CollisionManager::squaredRadiusCheck(bullet, enemy))
+			{
+				ScoreBoardManager::Instance()->setScore(ScoreBoardManager::Instance()->getScore() + 100);
+				enemy->_reset();
+				bullet->m_pisFiring = false;
+			}
+		}
+	}
+
+	for(auto enemy : m_pEnemies)
+	{
+		enemy->update();
+		if(CollisionManager::squaredRadiusCheck(enemy,m_pPlayer))
+		{
+			enemy->_reset();
 		}
 	}
 	
 	shotCount++;
 	
 	m_pPlayer->update();
-	m_pEnemy->update();
+	//m_pEnemy->update();
 	m_pBackground->update();
 	m_pHazard->update();
 
-	/*if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard))
+	if(CollisionManager::squaredRadiusCheck(m_pHazard, m_pPlayer))
 	{
-		damage();
-	}*/
-	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard);
+		m_pHazard->_reset();
+	}
+	//CollisionManager::squaredRadiusCheck(m_pHazard,m_pPlayer);
 
 	if(ScoreBoardManager::Instance()->getScore() >= 1000)
 	{
@@ -213,8 +231,9 @@ void Level1Scene::start()
 
 	m_buildBullets();
 
-	m_pEnemy = new Enemy(); // instantiates Enemy
-	addChild(m_pEnemy);
+	//m_pEnemy = new Enemy(); // instantiates Enemy
+	//addChild(m_pEnemy);
+	m_buildEnemies();
 
 	m_pHazard = new Hazard(); // instantiates Island
 	addChild(m_pHazard);
@@ -241,6 +260,16 @@ void Level1Scene::start()
 glm::vec2 Level1Scene::getMousePosition()
 {
 	return m_mousePosition;
+}
+
+void Level1Scene::m_buildEnemies()
+{
+	for (auto i = 0; i < m_enemyNum; ++i)
+	{
+		auto enemy = new Enemy();
+		m_pEnemies.push_back(enemy);
+		addChild(enemy);
+	}
 }
 
 void Level1Scene::m_buildBullets()

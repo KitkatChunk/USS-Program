@@ -9,8 +9,8 @@ Enemy::Enemy()
 	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("enemy");
 	setWidth(size.x);
 	setHeight(size.y);
-	setPosition(glm::vec2(getWidth() * 0.5,getHeight()));
-	setVelocity(glm::vec2(3,0));
+	setPosition(glm::vec2(rand() % (Config::SCREEN_WIDTH - getWidth()) + 1,getHeight()));
+	setVelocity(glm::vec2(0,4));
 	setIsColliding(false);
 	setType(GameObjectType::ENEMY);
 	TheSoundManager::Instance()->load("../Assets/audio/destruction.wav", "hit", SOUND_SFX);
@@ -46,15 +46,29 @@ void Enemy::_move()
 
 void Enemy::_checkBounds()
 {
+	if (getPosition().y > Config::SCREEN_HEIGHT + getHeight()) {
+		_reset();
+	}
+	
 	//right boundary
-	if (getPosition().x >= Config::SCREEN_WIDTH - getWidth() * 0.5f) 
-	{
-		setVelocity(glm::vec2(-2.0f, 0.0f));
-	}
+	//if (getPosition().x >= Config::SCREEN_WIDTH - getWidth() * 0.5f) 
+	//{
+	//	setVelocity(glm::vec2(-5.0f, 0.0f));
+	//}
 
-	//left boundary
-	if (getPosition().x <= getWidth() * 0.5) 
-	{
-		setVelocity(glm::vec2(2.0f, 0.0f));
-	}
+	////left boundary
+	//if (getPosition().x <= getWidth() * 0.5) 
+	//{
+	//	setVelocity(glm::vec2(5.0f, 0.0f));
+	//}
+}
+
+void Enemy::_reset()
+{
+	setIsColliding(false);
+	int halfWidth = getWidth() * 0.5;
+	int xComponent = rand() % (Config::SCREEN_WIDTH - getWidth()) + halfWidth + 1;
+	int yComponent = -(rand() % (Config::SCREEN_HEIGHT - 300) + (getHeight()*2));
+	
+	setPosition(glm::vec2(xComponent, yComponent));
 }

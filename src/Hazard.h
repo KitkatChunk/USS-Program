@@ -12,10 +12,10 @@ class Hazard : public DisplayObject
 	void draw() override;
 	void update() override;
 	void clean() override;
+	void _reset();
 
 	private:
 	void _move();
 	void _checkBounds();
-	void _reset();
 };
 #endif /* defined (__HAZARD__) */

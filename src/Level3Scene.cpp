@@ -52,7 +52,7 @@ void Level3Scene::update()
 	{
 		damage();
 	}*/
-	CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard);
+	CollisionManager::squaredRadiusCheck(m_pHazard,m_pPlayer);
 
 	if(ScoreBoardManager::Instance()->getScore() >= 3000)
 	{

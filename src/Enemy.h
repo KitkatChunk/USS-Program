@@ -14,6 +14,7 @@ class Enemy : public DisplayObject
 	void draw() override;
 	void update() override;
 	void clean() override;
+	void _reset();
 
 	private:
 	void _move();

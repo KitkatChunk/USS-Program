@@ -33,8 +33,12 @@ class Level1Scene : public Scene
 	// game objects
 	Background* m_pBackground;
 	Player* m_pPlayer;
-	Enemy* m_pEnemy;
 	Hazard* m_pHazard;
+	
+	int m_enemyNum = Config::NUM_OF_ENEMIES;
+	std::vector<Enemy*> m_pEnemies;
+	void m_buildEnemies();
+	//Enemy* m_pEnemy;
 
 	int m_bulletNum = Config::NUM_OF_BULLETS;
 	std::vector<Bullet*> m_pBullets;
