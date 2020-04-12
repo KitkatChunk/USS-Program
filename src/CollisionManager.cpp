@@ -1,7 +1,6 @@
 #include "CollisionManager.h"
 #include "Util.h"
 #include <algorithm>
-
 #include "Config.h"
 #include "ScoreBoardManager.h"
 

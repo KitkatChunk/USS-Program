@@ -141,6 +141,12 @@
     <ClCompile Include="..\src\ScoreBoardManager.cpp">
       <Filter>Managers</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\L2Enemy.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Shot.cpp">
+      <Filter>Game Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Game.h">
@@ -265,6 +271,12 @@
     </ClInclude>
     <ClInclude Include="..\src\ScoreBoardManager.h">
       <Filter>Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\L2Enemy.h">
+      <Filter>Game Objects\Object Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Shot.h">
+      <Filter>Game Objects\Object Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

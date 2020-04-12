@@ -21,7 +21,8 @@ void Level2Scene::draw()
 	{
 		bullet->draw();
 	}
-	
+
+	m_pShot->draw();
 	m_pEnemy->draw();
 	m_pPlayer->draw();
 	ScoreBoardManager::Instance()->Draw();
@@ -37,6 +38,7 @@ void Level2Scene::update()
 		if(CollisionManager::squaredRadiusCheck(bullet, m_pEnemy))
 		{
 			ScoreBoardManager::Instance()->setScore(ScoreBoardManager::Instance()->getScore() + 100);
+			m_pEnemy->_reset();
 			bullet->m_pisFiring = false;
 		}
 	}
@@ -45,15 +47,31 @@ void Level2Scene::update()
 	
 	m_pPlayer->update();
 	m_pEnemy->update();
+	m_pShot->respawn(m_pEnemy);
+	m_pShot->update();
 	m_pBackground->update();
 	m_pHazard->update();
 
-	/*if(CollisionManager::squaredRadiusCheck(m_pPlayer, m_pHazard))
+	if(CollisionManager::squaredRadiusCheck(m_pHazard, m_pPlayer))
 	{
-		damage();
-	}*/
-	CollisionManager::squaredRadiusCheck(m_pHazard,m_pPlayer);
+		m_pHazard->_reset();
+	}
 
+	if(CollisionManager::squaredRadiusCheck(m_pEnemy,m_pPlayer))
+	{
+		m_pEnemy->_reset();
+	}
+
+	if(m_pEnemy->getPosition().x - m_pPlayer->getPosition().x == 0)
+	{
+		m_pShot->fire();
+	}
+
+	if(CollisionManager::squaredRadiusCheck(m_pShot, m_pPlayer))
+	{
+		m_pShot->m_pisFiring = false;
+	}
+	
 	if(ScoreBoardManager::Instance()->getScore() >= 2000)
 	{
 		TheGame::Instance()->changeSceneState(SceneState::LEVEL3_SCENE);
@@ -214,8 +232,11 @@ void Level2Scene::start()
 
 	m_buildBullets();
 
-	m_pEnemy = new Enemy(); // instantiates Enemy
+	m_pEnemy = new L2Enemy(); // instantiates Enemy
 	addChild(m_pEnemy);
+
+	m_pShot = new Shot();
+	addChild(m_pShot);
 
 	m_pHazard = new Hazard(); // instantiates Island
 	addChild(m_pHazard);

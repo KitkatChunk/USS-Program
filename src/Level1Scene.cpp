@@ -27,7 +27,6 @@ void Level1Scene::draw()
 		enemy->draw();
 	}
 	
-	//m_pEnemy->draw();
 	m_pPlayer->draw();
 	ScoreBoardManager::Instance()->Draw();
 }
@@ -62,7 +61,6 @@ void Level1Scene::update()
 	shotCount++;
 	
 	m_pPlayer->update();
-	//m_pEnemy->update();
 	m_pBackground->update();
 	m_pHazard->update();
 
@@ -70,7 +68,6 @@ void Level1Scene::update()
 	{
 		m_pHazard->_reset();
 	}
-	//CollisionManager::squaredRadiusCheck(m_pHazard,m_pPlayer);
 
 	if(ScoreBoardManager::Instance()->getScore() >= 1000)
 	{
@@ -230,9 +227,6 @@ void Level1Scene::start()
 	addChild(m_pPlayer);
 
 	m_buildBullets();
-
-	//m_pEnemy = new Enemy(); // instantiates Enemy
-	//addChild(m_pEnemy);
 	m_buildEnemies();
 
 	m_pHazard = new Hazard(); // instantiates Island

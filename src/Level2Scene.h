@@ -5,11 +5,12 @@
 #include "Scene.h"
 #include "Player.h"
 #include "Hazard.h"
-#include "Enemy.h"
 #include "Background.h"
 #include "Label.h"
 #include "Bullet.h"
 #include "Config.h"
+#include "L2Enemy.h"
+#include "Shot.h"
 
 class Level2Scene : public Scene
 {
@@ -36,7 +37,8 @@ class Level2Scene : public Scene
 	
 	Background* m_pBackground;
 	Player* m_pPlayer;
-	Enemy* m_pEnemy;
+	L2Enemy* m_pEnemy;
+	Shot* m_pShot;
 	Hazard* m_pHazard;
 
 	// private data member
